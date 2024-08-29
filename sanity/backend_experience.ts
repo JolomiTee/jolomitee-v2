@@ -1,28 +1,31 @@
 import { defineField, defineType } from "sanity";
 
 export default defineType({
-	name: "development_experience",
-	title: "Web Development Experience",
+	name: "backend_experience",
+	title: "Backend Development Experience",
 	type: "document",
 	fields: [
 		defineField({
 			name: "company",
 			title: "Company",
 			type: "string",
+			validation: (rule) => rule.required().error(`Required field`),
 		}),
 		defineField({
 			name: "slug",
 			title: "Slug",
 			type: "slug",
 			options: {
-				source: "title",
+				source: "company",
 				maxLength: 96,
 			},
+			validation: (rule) => rule.required().error(`Required field`),
 		}),
 		defineField({
 			name: "start_date",
 			title: "Start date",
 			type: "date",
+			validation: (rule) => rule.required().error(`Required field`),
 		}),
 		defineField({
 			name: "end_date",
@@ -37,12 +40,14 @@ export default defineType({
 		defineField({
 			name: "description",
 			title: "Job Description",
-			type: "string",
+			type: "array",
+			of: [{ type: "block" }],
+			validation: (rule) => rule.required().error(`Required field`),
 		}),
 		defineField({
 			name: "company_link",
 			title: "Company link",
-			type: "string",
+			type: "url",
 		}),
 	],
 });
