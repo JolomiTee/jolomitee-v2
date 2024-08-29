@@ -1,6 +1,6 @@
-import Williams from "../../assets/images/orgs/Williams.jpeg";
-import Zepama from "../../assets/images/orgs/Zepama.jpg";
-import Adesther from "../../assets/images/orgs/adesther.jpg";
+import Williams from "/orgs/Williams.jpeg";
+import Zepama from "/orgs/Zepama.jpg";
+import Adesther from "/orgs/adesther.jpg";
 
 const info = [
 	{
