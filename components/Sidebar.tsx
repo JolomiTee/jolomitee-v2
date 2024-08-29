@@ -2,8 +2,8 @@
 
 // import ProfilePhoto from "../assets/images/newprofile.jpg";
 import { useState } from "react";
-import SocialList from "./SocialList";
-import Info from "./Info";
+import SocialList from "./sidebar/SocialList";
+import Info from "./sidebar/Info";
 
 const Sidebar = () => {
 	const [navOpen, setNavOpen] = useState(true);
