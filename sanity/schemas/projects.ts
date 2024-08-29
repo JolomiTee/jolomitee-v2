@@ -12,6 +12,19 @@ export default defineType({
 			validation: (rule) => rule.required().error(`Required field`),
 		}),
 		defineField({
+			name: "category",
+			title: "Project Category (Frontend || Backend)?",
+			type: "string",
+			options: {
+				list: [
+					{ title: "Frontend", value: "frontend" },
+					{ title: "Backend", value: "backend" },
+				],
+				layout: "dropdown",
+			},
+			validation: (rule) => rule.required().error(`Required field`),
+		}),
+		defineField({
 			name: "slug",
 			title: "Slug",
 			type: "slug",
