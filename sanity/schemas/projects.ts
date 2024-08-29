@@ -1,0 +1,42 @@
+import { defineField, defineType } from "sanity";
+
+export default defineType({
+	name: "projects",
+	title: "My Projects",
+	type: "document",
+	fields: [
+		defineField({
+			name: "project_name",
+			title: "Project Name",
+			type: "string",
+			validation: (rule) => rule.required().error(`Required field`),
+		}),
+		defineField({
+			name: "slug",
+			title: "Slug",
+			type: "slug",
+			options: {
+				source: "project_name",
+				maxLength: 96,
+			},
+			validation: (rule) => rule.required().error(`Required field`),
+		}),
+		defineField({
+			name: "image",
+			title: "Project Image",
+			type: "image",
+			validation: (rule) => rule.required().error(`Required field`),
+		}),
+		defineField({
+			name: "project_link",
+			title: "Deployment link",
+			type: "url",
+		}),
+		defineField({
+			name: "tags",
+			title: "Relevant Tags",
+			type: "array",
+			of: [{ type: "string" }],
+		}),
+	],
+});
