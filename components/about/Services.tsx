@@ -1,5 +1,5 @@
-import DesignIcon from "/icons/icon-design.svg";
-import IconDev from "/icons/icon-dev.svg";
+import DesignIcon from "@/public/icons/icon-design.svg";
+import IconDev from "@/public/icons/icon-dev.svg";
 
 const info = [
 	{
