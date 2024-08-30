@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
+import SocialList from "@/components/sidebar/SocialList";
+import Credits from "@/components/Credits";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,14 +20,25 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={`relative ${inter.className} mb-16 md:mt-[10px] md:mb-20 lg:w-max lg:m-auto lg:mb-[70px] 2xl:max-w-[1200px] 2xl:min-w-[95%] 2xl:flex 2xl:justify-center 2xl:items-start 2xl:gap-6`}
-			>
-				<Navbar />
-				<Sidebar />
-				<main className="xl:relative xl:min-w-full 2xl:min-w-[75%] 2xl:w-[750px] 2xl:m-0 2xl:mt-[6px]">
-					{children}
-				</main>
+			<body className={`relative ${inter.className}  `}>
+				<div className="relative md:mt-[10px] md:mb-20 lg:w-max lg:m-auto lg:mb-[70px] 2xl:max-w-[1200px] 2xl:min-w-[95%] 2xl:flex 2xl:justify-center 2xl:items-start 2xl:gap-6 mb-16">
+					<Navbar />
+					<Sidebar />
+					<main className="xl:relative xl:min-w-full 2xl:min-w-[75%] 2xl:w-[750px] 2xl:m-0 2xl:mt-[6px]">
+						{children}
+					</main>
+				</div>
+				<footer className="text-center text-white-2 mb-16 xl:flex xl:mb-0 xl:gap-5 xl:justify-between xl:items-center 2xl:max-w-[1200px] 2xl:min-w-[95%] mx-auto">
+					<div className="text-center flex gap-2 items-center h-fit">
+						<b>JolomiTee</b>
+						<small>version 2.0</small>
+					</div>
+					<div className="xl:block hidden">
+						<SocialList />
+					</div>
+
+					<Credits />
+				</footer>
 			</body>
 		</html>
 	);

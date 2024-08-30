@@ -18,9 +18,10 @@ const Sidebar = () => {
 		<aside
 			className={`
             sidebar mb-4 overflow-hidden transition-2 md:mb-[20px]  whitespace-nowrap 2xl:min-w-[25%] lg:shadow-5
-            ${navOpen ? "max-h-[660px]" : "max-h-[135px]"}
+            ${navOpen ? "max-h-[660px]" : "max-h-[165px]"}
+            ${!navOpen && "sm:max-h-[135px]"}
             ${!navOpen && "md:max-h-[155px]"}
-            ${!navOpen && "2xl:max-h-full"}`}
+            ${!navOpen && "xl:max-h-[95vh]"}`}
 		>
 			<div className="sidebar-info relative flex flex-col sm:flex-row justify-center sm:justify-start items-center gap-[15px] md:gap-[25px] 2xl:flex-col">
 				<Image
@@ -66,9 +67,10 @@ const Sidebar = () => {
 
 				<Info />
 
-				<div className="separator md:my-6"></div>
-
-				<SocialList />
+				<div className="2xl:hidden">
+					<div className="separator md:my-6"></div>
+					<SocialList />
+				</div>
 			</div>
 		</aside>
 	);
