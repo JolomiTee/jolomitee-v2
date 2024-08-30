@@ -125,7 +125,7 @@ main {
    --ionicon-stroke-width: 35px;
 }
 
-article.active {
+main.active {
    /* @apply block; */
    animation: fade 0.5s ease delay iteration-count backwards fill-mode;
 }
@@ -163,11 +163,11 @@ h4,
    @apply text-fs-5 font-fw-500;
 }
 
-.article-title {
+.main-title {
    @apply relative pb-2 mb-6 md:font-fw-600 md:pb-4;
 }
 
-.article-title::after {
+.main-title::after {
    content: "";
    animation: change ease 10s infinite;
    @apply absolute bottom-0 left-0 w-[30px] h-[3px] bg-gradient-yellow rounded-[3px] md:w-10 md:h-1;
@@ -361,7 +361,7 @@ h4,
 
    /* REUSED STYLE */
    .sidebar,
-   article {
+   main {
       width: 700px;
    }
 
@@ -384,7 +384,7 @@ h4,
 @media (min-width: 1024px) {
 
    .sidebar,
-   article {
+   main {
       width: 950px;
    }
 
@@ -434,7 +434,7 @@ h4,
    }
 
    .sidebar,
-   article {
+            main {
       width: auto;
    }
 

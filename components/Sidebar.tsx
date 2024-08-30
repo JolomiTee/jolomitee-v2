@@ -1,9 +1,11 @@
 "use client";
 
-// import ProfilePhoto from "../assets/images/newprofile.jpg";
+import ProfilePhoto from "@/public/jolomi.jpg";
 import { useState } from "react";
 import Info from "./sidebar/Info";
 import SocialList from "./sidebar/SocialList";
+import Image from "next/image";
+import { Stars } from "lucide-react";
 
 const Sidebar = () => {
 	const [navOpen, setNavOpen] = useState(true);
@@ -21,11 +23,11 @@ const Sidebar = () => {
 		>
 			<div className="sidebar-info relative flex justify-start items-center gap-[15px] md:gap-[25px] 2xl:flex-col">
 				<figure className="avatar-box bg-gradient-onyx rounded-2xl">
-					<img
-						src={""}
+					<Image
+						src={ProfilePhoto}
 						alt="Jolomi Taiwo"
 						title="Jolomi Taiwo"
-						width="80"
+						width="150"
 						className="rounded-2xl md:w-[100px] 2xl:w-[120px] "
 					/>
 				</figure>
@@ -36,9 +38,15 @@ const Sidebar = () => {
 					>
 						Jolomi Taiwo E.
 					</h1>
-					<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 w-full px-3 py-1 rounded-lg md:px-5 md:py-2">
-						Frontend Web Developer
-					</p>
+					<div className="text-center">
+						<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 w-full px-3 rounded-lg md:px-5 md:py-2">
+							Frontend Web Developer <br />
+						</p>
+						<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 w-full px-3 rounded-lg md:px-5 md:py-2 flex items-center gap-1">
+							Newbie Backend Developer{" "}
+							<Stars className="text-orange-yellow-crayola w-3 h-3" />
+						</p>
+					</div>
 				</div>
 
 				<button

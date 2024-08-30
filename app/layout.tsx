@@ -19,7 +19,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${inter.className} mb-16 md:mt-[10px] md:mb-20 lg:relative lg:w-max lg:m-auto lg:mb-[70px] 2xl:max-w-[1200px] 2xl:min-w-[95%] 2xl:flex 2xl:justify-center 2xl:items-start 2xl:gap-6`}
+				className={`relative ${inter.className} mb-16 md:mt-[10px] md:mb-20 lg:w-max lg:m-auto lg:mb-[70px] 2xl:max-w-[1200px] 2xl:min-w-[95%] 2xl:flex 2xl:justify-center 2xl:items-start 2xl:gap-6`}
 			>
 				<Navbar />
 				<Sidebar />

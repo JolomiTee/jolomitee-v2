@@ -5,7 +5,7 @@ const Page = () => {
 	return (
 		<>
 			<header>
-				<h2 className="h2 article-title mb-8">My Timeline</h2>
+				<h2 className="h2 main-title mb-8">My Timeline</h2>
 			</header>
 
 			<section className="timeline mb-8">

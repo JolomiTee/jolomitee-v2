@@ -5,7 +5,7 @@ export default function Home() {
 	return (
 		<>
 			<header>
-				<h2 className="h2 article-title">About Me</h2>
+				<h2 className="h2 main-title">About Me</h2>
 			</header>
 
 			<section className="about-text text-light-gray text-fs-6 font-fw-300 leading-[1.6]">

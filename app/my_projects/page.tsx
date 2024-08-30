@@ -19,7 +19,7 @@ const Page = () => {
 	return (
 		<>
 			<header>
-				<h2 className="h2 article-title mb-6">My Projects</h2>
+				<h2 className="h2 main-title mb-6">My Projects</h2>
 			</header>
 
 			<section className="projects">
