@@ -18,7 +18,7 @@ const Sidebar = () => {
 		<aside
 			className={`
             sidebar mb-4 overflow-hidden transition-2 md:mb-[20px]  whitespace-nowrap 2xl:min-w-[25%] lg:shadow-5
-            ${navOpen ? "max-h-[660px]" : "max-h-[112px]"}
+            ${navOpen ? "max-h-[660px]" : "max-h-[135px]"}
             ${!navOpen && "md:max-h-[155px]"}
             ${!navOpen && "2xl:max-h-full"}`}
 		>
@@ -39,11 +39,11 @@ const Sidebar = () => {
 						Jolomi Taiwo E.
 					</h1>
 					<div className="grid gap-2 md:flex md:items-center md:gap-3 2xl:grid">
-						<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 rounded-lg px-3 py-1 text-center justify-center w-fit mx-auto">
+						<p className="title text-white-1 bg-onyx text-fs-7 lg:text-fs-6 font-fw-300 rounded-lg px-3 py-1 text-center justify-center w-fit mx-auto">
 							Frontend Developer
 						</p>
 
-						<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 rounded-lg px-3 py-1 text-center flex items-center gap-1 justify-center w-fit mx-auto">
+						<p className="title text-white-1 bg-onyx text-fs-7 lg:text-fs-6 font-fw-300 rounded-lg px-3 py-1 text-center flex items-center gap-1 justify-center w-fit mx-auto">
 							Newbie Backend Developer{" "}
 							<Stars className="text-orange-yellow-crayola w-3 h-3" />
 						</p>

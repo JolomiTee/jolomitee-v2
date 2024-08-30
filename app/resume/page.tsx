@@ -21,11 +21,11 @@ const Page = () => {
 				<ul className="timeline-list text-fs-6 ml-11">
 					{schoolInfo.map((items, index) => (
 						<li key={index} className="timeline-item relative">
-							<h4 className="h4 timelime-item-title text-fs-6 leading-[1.3] mb-2">
+							<h4 className="h4 timelime-item-title text-fs-6 lg:text-fs-4 leading-[1.3] mb-2 ">
 								{items.school}
 							</h4>
 
-							<span className="text-vegas-gold font-fw-400 leading-[1.6]">
+							<span className="text-vegas-gold font-fw-400 leading-[1.6] lg:text-fs-4">
 								{items.startDate} — {items.endDate}
 							</span>
 						</li>
@@ -44,7 +44,7 @@ const Page = () => {
 				<ul className="timeline-list text-fs-6 ml-11">
 					{developmentInfo.map((items, index) => (
 						<li key={index} className="timeline-item relative">
-							<h4 className="h4 timelime-item-title text-fs-6 leading-[1.3] mb-2">
+							<h4 className="h4 timelime-item-title text-fs-6 lg:text-fs-4 leading-[1.3] mb-2">
 								{items.devExperience}
 							</h4>
 
@@ -52,7 +52,7 @@ const Page = () => {
 								{items.duration}
 							</span>
 
-							<p className="timeline-text text-light-gray font-fw-300 leading-[1.6] text-fs-5">
+							<p className="timeline-text text-light-gray font-fw-300 leading-[1.6] text-fs-5 lg:text-fs-4">
 								{items.text}
 								<a target="_blank" href={items.link}>
 									{items.linkText}
