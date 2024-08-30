@@ -5,7 +5,8 @@ import { useState } from "react";
 import Info from "./sidebar/Info";
 import SocialList from "./sidebar/SocialList";
 import Image from "next/image";
-import { Stars } from "lucide-react";
+import { ChevronDown, ChevronUp, Stars } from "lucide-react";
+import { Badge } from "./ui/badge";
 
 const Sidebar = () => {
 	const [navOpen, setNavOpen] = useState(true);
@@ -22,29 +23,29 @@ const Sidebar = () => {
             ${!navOpen && "2xl:max-h-full"}`}
 		>
 			<div className="sidebar-info relative flex flex-col sm:flex-row justify-center sm:justify-start items-center gap-[15px] md:gap-[25px] 2xl:flex-col">
-				<figure className="avatar-box bg-gradient-onyx rounded-2xl w-[100px] ">
-					<Image
-						src={ProfilePhoto}
-						alt="Jolomi Taiwo"
-						title="Jolomi Taiwo"
-						width="150"
-						className="rounded-2xl max-w-24 md:w-[100px] 2xl:w-[120px] "
-					/>
-				</figure>
-				<div className="w-full">
+				<Image
+					src={ProfilePhoto}
+					alt="Jolomi Taiwo"
+					title="Jolomi Taiwo"
+					width="150"
+					className=" avatar-box bg-gradient-onyx rounded-2xl w-[100px] 2xl:w-[120px]"
+				/>
+
+				<div className="w-full sm:w-fit text-center grid gap-2">
 					<h1
 						className="name text-white-2 text-fs-2 font-fw-500 md:mb-3 md:text-[20px]"
 						title="Jolomi Taiwo"
 					>
 						Jolomi Taiwo E.
 					</h1>
-					<div className="">
-						<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 w-full rounded-lg md:px-5 md:py-2 flex flex-wrap">
-							Frontend Developer &nbsp;
-							<span className="flex items-center gap-1">
-								Newbie Backend Developer{" "}
-								<Stars className="text-orange-yellow-crayola w-3 h-3" />
-							</span>
+					<div className="grid gap-2 md:flex md:items-center md:gap-3 lg:grid">
+						<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 rounded-lg px-3 py-1 text-center justify-center w-fit mx-auto">
+							Frontend Developer
+						</p>
+
+						<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 rounded-lg px-3 py-1 text-center flex items-center gap-1 justify-center w-fit mx-auto">
+							Newbie Backend Developer{" "}
+							<Stars className="text-orange-yellow-crayola w-3 h-3" />
 						</p>
 					</div>
 				</div>
@@ -52,11 +53,10 @@ const Sidebar = () => {
 				<button
 					onClick={toggleSideBar}
 					type="button"
-					className="info-more-btn rounded-tr-[20px] rounded-bl-2xl absolute top-[-15px] right-[-15px] text-fs-7 text-orange-yellow-crayola bg-gradient-onyx p-3 shadow-2 transition-2 z-[1] before:absolute before:inset-[1px] before:rounded-inherit before:bg-gradient-jet before:transition-1 before:z-[1] hover:bg-gradient-yellow-1 focus:bg-gradient-yellow-1 hover:before:bg-gradient-yellow-2 focus:before:bg-gradient-yellow-2 md:top-[-30px] md:right-[-30px] 2xl:hidden"
-					data-sidebar-btn
+					className="info-more-btn rounded-tr-[20px] rounded-bl-2xl absolute top-[-15px] right-[-15px] text-fs-7 text-orange-yellow-crayola bg-gradient-onyx p-2 shadow-2 transition-2 z-[1] before:absolute before:inset-[1px] before:rounded-inherit before:bg-gradient-jet before:transition-1 before:z-[1] hover:bg-gradient-yellow-1 focus:bg-gradient-yellow-1 hover:before:bg-gradient-yellow-2 focus:before:bg-gradient-yellow-2 md:top-[-30px] md:right-[-30px] 2xl:hidden"
 				>
-					<span className="hidden md:block md:text-fs-6">Show Contacts</span>
-					{/* <ion-icon name={navOpen ? "chevron-up" : "chevron-down"}></ion-icon> */}
+					<span className="hidden md:block md:text-fs-7">Show Contacts</span>
+					{navOpen ? <ChevronUp /> : <ChevronDown />}
 				</button>
 			</div>
 
