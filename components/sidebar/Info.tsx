@@ -39,9 +39,11 @@ const Info = () => {
 						key={index}
 						className="contact-item min-h-full flex items-center gap-4"
 					>
-						<div className="icon-box p-1">{items.icon}</div>
+						<div className="icon-box w-[40px] h-[40px] p-[10px]">
+							{items.icon}
+						</div>
 						<div className="contact-info text-start">
-							<p className="contact-title text-light-gray-70 text-fs-8 uppercase mb-[2px]">
+							<p className="contact-title text-light-gray-70 text-fs-7 uppercase mb-[2px]">
 								{items.contact_title}
 							</p>
 							{items.element === "time" ? (

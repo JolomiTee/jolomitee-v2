@@ -30,7 +30,7 @@ const SocialList = () => {
 						href={items.href}
 						target="_blank"
 						title={items.title}
-						className="social-link text-light-gray-70 text-fs-7 hover:text-light-gray flex gap-1 items-center"
+						className="social-link text-light-gray-70 text-fs-5 hover:text-light-gray flex gap-1 items-center"
 					>
 						{items.title} <ArrowUpRight className="w-3 h-3" />
 						{/* <ion-icon name={items.ion_icon}></ion-icon> */}

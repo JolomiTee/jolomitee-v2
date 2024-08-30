@@ -33,12 +33,12 @@ const Sidebar = () => {
 
 				<div className="w-full sm:w-fit text-center grid gap-2">
 					<h1
-						className="name text-white-2 text-fs-2 font-fw-500 md:mb-3 md:text-[20px]"
+						className="name text-white-2 text-fs-2 font-fw-500 md:text-[20px] md:text-start md:px-3 2xl:text-center"
 						title="Jolomi Taiwo"
 					>
 						Jolomi Taiwo E.
 					</h1>
-					<div className="grid gap-2 md:flex md:items-center md:gap-3 lg:grid">
+					<div className="grid gap-2 md:flex md:items-center md:gap-3 2xl:grid">
 						<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 rounded-lg px-3 py-1 text-center justify-center w-fit mx-auto">
 							Frontend Developer
 						</p>
@@ -53,9 +53,8 @@ const Sidebar = () => {
 				<button
 					onClick={toggleSideBar}
 					type="button"
-					className="info-more-btn rounded-tr-[20px] rounded-bl-2xl absolute top-[-15px] right-[-15px] text-fs-7 text-orange-yellow-crayola bg-gradient-onyx p-2 shadow-2 transition-2 z-[1] before:absolute before:inset-[1px] before:rounded-inherit before:bg-gradient-jet before:transition-1 before:z-[1] hover:bg-gradient-yellow-1 focus:bg-gradient-yellow-1 hover:before:bg-gradient-yellow-2 focus:before:bg-gradient-yellow-2 md:top-[-30px] md:right-[-30px] 2xl:hidden"
+					className="info-more-btn rounded-tr-[20px] rounded-bl-2xl absolute top-[-15px] right-[-15px] text-fs-7 text-orange-yellow-crayola bg-gradient-onyx p-2 shadow-2 transition-2 z-[1] before:absolute before:inset-[1px] before:rounded-inherit before:bg-gradient-jet before:transition-1 before:z-[1] hover:bg-gradient-yellow-1 focus:bg-gradient-yellow-1 hover:before:bg-gradient-yellow-2 focus:before:bg-gradient-yellow-2 md:top-[-30px] md:right-[-30px] xl:hidden"
 				>
-					<span className="hidden md:block md:text-fs-7">Show Contacts</span>
 					{navOpen ? <ChevronUp /> : <ChevronDown />}
 				</button>
 			</div>

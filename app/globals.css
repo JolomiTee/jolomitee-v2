@@ -102,9 +102,9 @@ main {
 }
 
 .icon-box {
-   @apply bg-gradient-onyx text-fs-4 text-orange-yellow-crayola relative md:w-12 md:h-12 md:rounded-xl md:text-fs-2;
-   width: 25px;
-      height: 25px;
+   @apply bg-gradient-onyx text-fs-4 text-orange-yellow-crayola relative md:rounded-xl md:text-fs-2;
+      /* width: 25px;
+      height: 25px; */
    border-radius: 8px;
    display: flex;
    justify-content: center;
@@ -244,7 +244,7 @@ h4,
 }
 
 .contact-info :is(.contact-link, time, address) {
-   @apply text-fs-7 text-white-2
+   @apply text-fs-6 text-white-2
 }
 
 .modal-container::-webkit-scrollbar {
@@ -352,6 +352,15 @@ h4,
    .h3 {
       @apply text-[20px]
    }
+.contact-list {
+   grid-template-columns: 1fr 1fr;
+   gap: 30px 15px;
+}
+
+.project-list {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
 }
 
 @media (min-width: 760px) {
@@ -366,16 +375,8 @@ h4,
       width: 100px;
    }
 
-   /* SIDEBAR */
-   .contact-list {
-      grid-template-columns: 1fr 1fr;
-      gap: 30px 15px;
-   }
+                        /* SIDEBAR */
 
-   .project-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-   }
 }
 
 @media (min-width: 1024px) {
