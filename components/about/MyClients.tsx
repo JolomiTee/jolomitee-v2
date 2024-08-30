@@ -46,7 +46,7 @@ const MyClients = () => {
 								className="rounded-[15px] w-[100px] mx-auto"
 								width={100}
 							/>
-							<p className="text-[#fff]">{items.name}</p>
+							<p className="text-[#fff] text-fs-5">{items.name}</p>
 						</Link>
 					</li>
 				))}

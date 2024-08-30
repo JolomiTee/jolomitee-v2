@@ -12,7 +12,7 @@ const Page = () => {
 
 			<section className="timeline mb-8">
 				<div className="title-wrapper flex items-center gap-4 mb-6">
-					<div className="icon-box">
+					<div className="icon-box w-[40px] h-[40px] p-[10px]">
 						<BookMarkedIcon />
 					</div>
 					<h3 className="h3">Formal Education</h3>
@@ -35,7 +35,7 @@ const Page = () => {
 
 			<section className="timeline mb-8">
 				<div className="title-wrapper flex items-center gap-4 mb-6">
-					<div className="icon-box">
+					<div className="icon-box w-[40px] h-[40px] p-[10px]">
 						<Workflow />
 					</div>
 					<h3 className="h3">Web Development Experience</h3>
@@ -48,11 +48,11 @@ const Page = () => {
 								{items.devExperience}
 							</h4>
 
-							<span className="text-vegas-gold font-fw-400 leading-[1.6]">
+							<span className="text-vegas-gold font-fw-400 leading-[1.6] text-fs-5">
 								{items.duration}
 							</span>
 
-							<p className="timeline-text text-light-gray font-fw-300 leading-[1.6]">
+							<p className="timeline-text text-light-gray font-fw-300 leading-[1.6] text-fs-5">
 								{items.text}
 								<a target="_blank" href={items.link}>
 									{items.linkText}
@@ -68,7 +68,7 @@ const Page = () => {
 				<ul className="skills-list flex flex-wrap gap-5 justify-center items-center">
 					{toolsInfo.map((items, index) => (
 						<li key={index} className="skill-item">
-							<Image src={items.link} width={60} height={60} alt={items.name} />
+							<Image src={items.link} width={50} height={50} alt={items.name} />
 						</li>
 					))}
 				</ul>
