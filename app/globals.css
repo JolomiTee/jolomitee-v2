@@ -2,30 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.chakra-petch-regular {
-   font-family: "Chakra Petch", sans-serif;
-   font-weight: 400;
-   font-style: normal;
-}
-
-.chakra-petch-medium {
-   font-family: "Chakra Petch", sans-serif;
-   font-weight: 500;
-   font-style: normal;
-}
-
-.chakra-petch-semibold {
-   font-family: "Chakra Petch", sans-serif;
-   font-weight: 600;
-   font-style: normal;
-}
-
-.chakra-petch-bold {
-   font-family: "Chakra Petch", sans-serif;
-   font-weight: 700;
-   font-style: normal;
-}
-
 @layer base {
 
    /* #RESET */
@@ -103,7 +79,7 @@ main {
 
 .icon-box {
    @apply bg-gradient-onyx text-fs-4 text-orange-yellow-crayola relative md:rounded-xl md:text-fs-2;
-      /* width: 25px;
+   /* width: 25px;
       height: 25px; */
    border-radius: 8px;
    display: flex;
@@ -225,7 +201,7 @@ h4,
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
-   @apply rounded-[5px] bg-orange-yellow-crayola
+   @apply rounded-[5px] bg-orange-yellow-crayola;
 }
 
 .has-scrollbar::-webkit-scrollbar-button {
@@ -244,11 +220,11 @@ h4,
 }
 
 .contact-info :is(.contact-link, time, address) {
-   @apply text-fs-6 text-white-2
+   @apply text-fs-6 text-white-2;
 }
 
 .modal-container::-webkit-scrollbar {
-   @apply hidden
+   @apply hidden;
 }
 
 
@@ -268,6 +244,9 @@ h4,
 /* Testimonial Modal Container */
 
 /* Resume */
+.timeline-item {
+   @apply ps-3;
+}
 .timeline-item:not(:last-child) {
    margin-bottom: 30px;
 }
@@ -275,12 +254,12 @@ h4,
 .timeline-item:not(:last-child)::before {
    content: "";
    height: calc(100% + 50px);
-   @apply absolute top-[-25px] left-[-23px] w-[1px] bg-jet
+   @apply absolute top-[-25px] left-[-23px] w-[1px] bg-jet;
 }
 
 .timeline-item::after {
    content: '';
-   @apply absolute top-[5px] left-[-25px] w-[6px] h-[6px] bg-gradient-yellow rounded-full shadow-timeline
+   @apply absolute top-[5px] left-[-25px] w-[6px] h-[6px] bg-gradient-yellow rounded-full shadow-timeline;
 }
 
 /* Projects */
@@ -302,39 +281,37 @@ h4,
    background: hsla(0, 0%, 0%, .5);
 }
 
-.project-item-icon-box {}
-
-.project-item>a:hover .project-item-icon-box {
-   @apply scale-100 opacity-100
+.project-item-icon-box {
+   @apply w-10 h-10 flex justify-center items-center bg-jet text-orange-yellow-crayola absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-[20px] rounded-xl opacity-0 z-[1] transition-1;
 }
 
-.project-item-icon-box ion-icon {
-   --ionicon-stroke-width: 50px
+.project-item>a:hover .project-item-icon-box {
+   @apply scale-100 opacity-100;
 }
 
 .project-item>a:hover img {
-   transform: scale(1.1);
+   @apply transition-all;
+      transform: scale(1.05);
 }
 
 
 /* Media Queries */
 
 /* 450px screens */
-/* client */
 .client-item {
    min-width: calc(33.33% - 10px);
 }
 
 .skills-list {
-   @apply sm:p-5
+   @apply sm:p-5;
 }
 
 .skill-item img {
-   @apply sm:p-0 sm:justify-center
+   @apply sm:p-0 sm:justify-center;
 }
 
 .skill-item:not(:last-child) {
-   @apply sm:mb-4
+   @apply sm:mb-4;
 }
 
 
@@ -352,15 +329,16 @@ h4,
    .h3 {
       @apply text-[20px]
    }
-.contact-list {
-   grid-template-columns: 1fr 1fr;
-   gap: 30px 15px;
-}
 
-.project-list {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-}
+      .contact-list {
+         grid-template-columns: 1fr 1fr;
+         gap: 30px 15px;
+      }
+
+      .project-list {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+      }
 }
 
 @media (min-width: 760px) {
@@ -375,7 +353,7 @@ h4,
       width: 100px;
    }
 
-                        /* SIDEBAR */
+      /* SIDEBAR */
 
 }
 
@@ -432,7 +410,7 @@ h4,
    }
 
    .sidebar,
-            main {
+      main {
       width: auto;
    }
 
