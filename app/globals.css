@@ -103,8 +103,8 @@ main {
 
 .icon-box {
    @apply bg-gradient-onyx text-fs-4 text-orange-yellow-crayola relative md:w-12 md:h-12 md:rounded-xl md:text-fs-2;
-   width: 30px;
-   height: 30px;
+   width: 25px;
+      height: 25px;
    border-radius: 8px;
    display: flex;
    justify-content: center;
@@ -121,9 +121,6 @@ main {
    z-index: -1;
 }
 
-.icon-box ion-icon {
-   --ionicon-stroke-width: 35px;
-}
 
 main.active {
    /* @apply block; */

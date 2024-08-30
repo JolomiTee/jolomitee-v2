@@ -2,7 +2,7 @@ const info = {
 	items: [
 		{
 			href: "https://github.com/JolomiTee",
-			ion_icon: "logo-github",
+			icon: "logo-github",
 			title: "Github",
 		},
 		{

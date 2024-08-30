@@ -21,30 +21,30 @@ const Sidebar = () => {
             ${!navOpen && "md:max-h-[155px]"}
             ${!navOpen && "2xl:max-h-full"}`}
 		>
-			<div className="sidebar-info relative flex justify-start items-center gap-[15px] md:gap-[25px] 2xl:flex-col">
-				<figure className="avatar-box bg-gradient-onyx rounded-2xl">
+			<div className="sidebar-info relative flex flex-col sm:flex-row justify-center sm:justify-start items-center gap-[15px] md:gap-[25px] 2xl:flex-col">
+				<figure className="avatar-box bg-gradient-onyx rounded-2xl w-[100px] ">
 					<Image
 						src={ProfilePhoto}
 						alt="Jolomi Taiwo"
 						title="Jolomi Taiwo"
 						width="150"
-						className="rounded-2xl md:w-[100px] 2xl:w-[120px] "
+						className="rounded-2xl max-w-24 md:w-[100px] 2xl:w-[120px] "
 					/>
 				</figure>
-				<div className="info-content">
+				<div className="w-full">
 					<h1
-						className="name text-white-2 text-fs-2 font-fw-500 text-center md:mb-3 md:text-[20px]"
+						className="name text-white-2 text-fs-2 font-fw-500 md:mb-3 md:text-[20px]"
 						title="Jolomi Taiwo"
 					>
 						Jolomi Taiwo E.
 					</h1>
-					<div className="text-center">
-						<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 w-full px-3 rounded-lg md:px-5 md:py-2">
-							Frontend Web Developer <br />
-						</p>
-						<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 w-full px-3 rounded-lg md:px-5 md:py-2 flex items-center gap-1">
-							Newbie Backend Developer{" "}
-							<Stars className="text-orange-yellow-crayola w-3 h-3" />
+					<div className="">
+						<p className="title text-white-1 bg-onyx text-fs-7 font-fw-300 w-full rounded-lg md:px-5 md:py-2 flex flex-wrap">
+							Frontend Developer &nbsp;
+							<span className="flex items-center gap-1">
+								Newbie Backend Developer{" "}
+								<Stars className="text-orange-yellow-crayola w-3 h-3" />
+							</span>
 						</p>
 					</div>
 				</div>
