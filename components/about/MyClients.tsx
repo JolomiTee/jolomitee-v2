@@ -1,6 +1,8 @@
 import Williams from "@/public/orgs/Williams.jpeg";
 import Zepama from "@/public/orgs/Zepama.jpg";
 import Adesther from "@/public/orgs/adesther.jpg";
+import Image from "next/image";
+import Link from "next/link";
 
 const info = [
 	{
@@ -31,20 +33,21 @@ const MyClients = () => {
 			<ul className="client-list has-scrollbar flex justify-center items-start gap-8 my-0 mx-[-15px] p-6 flex-wrap md:my-0 md:mx-[-30px] md:p-11">
 				{info.map((items, index) => (
 					<li key={index} className="client-items min-h-[50%] snap-start">
-						{/* <Link
-							to={items.link}
+						<Link
+							href={items.link}
 							className="grid justify-center items-center gap-3 text-center w-[100px]"
 							target="_blank"
 							title={items.name}
 							rel="noopener"
 						>
-							<img
+							<Image
 								src={items.img}
 								alt={items.name}
 								className="rounded-[15px] w-[100px] mx-auto"
+								width={100}
 							/>
 							<p className="text-[#fff]">{items.name}</p>
-						</Link> */}
+						</Link>
 					</li>
 				))}
 			</ul>

@@ -1,5 +1,6 @@
 import DesignIcon from "@/public/icons/icon-design.svg";
 import IconDev from "@/public/icons/icon-dev.svg";
+import Image from "next/image";
 
 const info = [
 	{
@@ -27,7 +28,12 @@ const Services = () => {
 						className="service-item relative bg-gradient-onyx p-5 rounded-[14px] shadow-2 z-[1] before:absolute inset-[1px] before:bg-gradient-jet before:rounded-inherit before:z-[1] md:flex"
 					>
 						<div className="service-icon-box mb-3 w-full md:max-w-[60px]">
-							<img src={item.img} alt={item.alt} className="m-auto md:m-0" />
+							<Image
+								src={item.img}
+								alt={item.alt}
+								className="m-auto md:m-0"
+								width={35}
+							/>
 						</div>
 						<div className="service-content-box text-center md:text-start">
 							<h4 className="h4 service-item-title mb-2 lg:text-fs-2">
