@@ -20,7 +20,7 @@ export default defineType({
 			title: "Value",
 			type: "slug",
 			options: {
-				source: "tag",
+				source: "label",
 				maxLength: 20,
 			},
 			validation: (rule) => rule.required().error(`Required field`),

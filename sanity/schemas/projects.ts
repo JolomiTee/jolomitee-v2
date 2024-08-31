@@ -52,7 +52,7 @@ export default defineType({
 			of: [
 				{
 					type: "reference",
-					to: [{ type: "tag" }],
+					to: [{ type: "tags" }],
 				},
 			],
 		},
