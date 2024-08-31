@@ -9,7 +9,11 @@ export default defineType({
 			name: "label",
 			title: "Tag Name",
 			type: "string",
-			validation: (rule) => rule.required().error(`Required field`),
+			validation: (Rule) =>
+				Rule.required()
+					.min(1)
+					.max(20)
+					.error("Title is required and must be between 1 and 20 characters."),
 		}),
 		defineField({
 			name: "value",
