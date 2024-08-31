@@ -80,7 +80,7 @@ export const projects = [
 	},
 	{
 		name: "Bookmark Landing Page",
-		link: "https://bookmark-meec.onrender.com/https://jolomitee.github.io/Admin_Dashboad_1/",
+		link: "https://bookmark-meec.onrender.com/",
 		img: Project6,
 		category: [
 			{ value: "landing page", label: "landing page" },

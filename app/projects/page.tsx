@@ -48,7 +48,7 @@ const Page = () => {
 				<h2 className="h2 main-title mb-6">My Projects</h2>
 			</header>
 
-			<div className="relative mt-5 mb-7 flex items-center justify-between gap-5">
+			<div className="relative mt-5 mb-7 xl:flex items-center justify-between gap-5 hidden">
 				<Input
 					placeholder="Search project"
 					value={search}
