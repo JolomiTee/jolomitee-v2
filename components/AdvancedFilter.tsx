@@ -18,28 +18,10 @@ import { cn } from "@/lib/utils";
 import { StaticImageData } from "next/image";
 import React, { useState } from "react";
 
-const tags = [
-	{
-		value: "react",
-		label: "React",
-	},
-	{
-		value: "stripe",
-		label: "stripe",
-	},
-	{
-		value: "zustand",
-		label: "Zustand",
-	},
-	{
-		value: "shadcn",
-		label: "Shadcn",
-	},
-	{
-		value: "tailwindcss",
-		label: "Tailwindcss",
-	},
-];
+interface Tag {
+	value: string;
+	label: string;
+}
 
 interface Project {
 	name: string;
@@ -66,13 +48,27 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 	const handleComboSearch = (value: string) => {
 		const searchValue = value.toLowerCase();
 		const filtered = originalProjects.filter((project) => {
-			const tagsArray = project.category
-				.split(", ")
-				.map((tag) => tag.toLowerCase());
-			return tagsArray.some((tag) => tag.includes(searchValue));
+			// Check if any of the tags in the project match the search value
+			return project.category.some((tag) =>
+				tag.value.toLowerCase().includes(searchValue)
+			);
 		});
 		_setProjects(filtered);
 	};
+
+	const extractUniqueTags = (originalProjects: Project[]): Tag[] => {
+		// Flatten the categories from all projects
+		const allTags = originalProjects.flatMap((project) => project.category);
+
+		// Use a Set to filter out duplicates
+		const uniqueTags = Array.from(new Set(allTags.map((tag) => tag.value))).map(
+			(value) => allTags.find((tag) => tag.value === value)!
+		);
+
+		return uniqueTags;
+	};
+
+	const uniqueTags = extractUniqueTags(_projects);
 
 	return (
 		<div className="flex justify-between gap-5 items-center">
@@ -85,7 +81,9 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 						className="w-[150px] justify-between"
 					>
 						{value
-							? _projects.find((tags) => tags.value === value)?.label
+							? _projects
+									.flatMap((project) => project.category)
+									.find((tag) => tag.value === value)?.label || "Tag not found"
 							: "Select tag"}
 						<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 					</Button>
@@ -96,10 +94,10 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 						<CommandList>
 							<CommandEmpty>No tag found.</CommandEmpty>
 							<CommandGroup>
-								{tags.map((tags) => (
+								{uniqueTags.map((tag: Tag) => (
 									<CommandItem
-										key={tags.value}
-										value={tags.value}
+										key={tag.value}
+										value={tag.value}
 										onSelect={(currentValue) => {
 											const newValue =
 												currentValue === value ? "" : currentValue;
@@ -111,10 +109,10 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 										<Check
 											className={cn(
 												"mr-2 h-4 w-4",
-												value === tags.value ? "opacity-100" : "opacity-0"
+												value === tag.value ? "opacity-100" : "opacity-0"
 											)}
 										/>
-										{tags.label}
+										{tag.label}
 									</CommandItem>
 								))}
 							</CommandGroup>
