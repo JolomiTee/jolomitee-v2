@@ -78,7 +78,7 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 						variant="outline"
 						role="combobox"
 						aria-expanded={openCombobox}
-						className="w-[200px] justify-between"
+						className="w-[200px] justify-between opacity-80 text-black/80"
 					>
 						{value
 							? _projects
@@ -90,7 +90,7 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 				</PopoverTrigger>
 				<PopoverContent className="w-[200px] p-0">
 					<Command>
-						<CommandInput placeholder="Search tag" />
+						<CommandInput placeholder="Search tags" />
 						<CommandList>
 							<CommandEmpty>No tag found.</CommandEmpty>
 							<CommandGroup>

@@ -44,7 +44,7 @@ const Page = () => {
 				<h2 className="h2 main-title mb-6">My Projects</h2>
 			</header>
 
-			<div className="mt-5 mb-7 flex items-center justify-between gap-5">
+			<div className="relative mt-5 mb-7 flex items-center justify-between gap-5">
 				<Input
 					placeholder="Search project"
 					value={search}
@@ -52,16 +52,7 @@ const Page = () => {
 					onChange={handleSearch}
 				/>
 
-				<div className="hidden xl:flex items-center gap-5">
-					<div className="flex items-center space-x-2">
-						<Switch id="more-filters" />
-						<Label htmlFor="more-filters" className="text-light-gray text-sm">
-							More filters
-						</Label>
-					</div>
-
-					<AdvancedFilter _projects={_projects} _setProjects={_setProjects} />
-				</div>
+				<AdvancedFilter _projects={_projects} _setProjects={_setProjects} />
 			</div>
 
 			<section className="projects">
