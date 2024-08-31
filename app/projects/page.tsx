@@ -5,8 +5,6 @@ import { projects } from "@/lib/data";
 import { useState } from "react";
 
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
 
 import AdvancedFilter from "@/components/AdvancedFilter";
 import Tags from "@/components/my_projects/Tags";
@@ -65,7 +63,7 @@ const Page = () => {
 								img={project.img}
 								responsive={project.responsive}
 							/>
-							{/* <Tags category={project.category} /> */}
+							<Tags category={project.category} />
 							<Separator className="my-5" />
 						</li>
 					))}

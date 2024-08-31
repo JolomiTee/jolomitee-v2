@@ -1,24 +1,25 @@
 import React from "react";
 import { Badge } from "../ui/badge";
 
-const Tags = ({ category }: { category: string }) => {
-	function splitStr(str: string, separator: string) {
-		const categoryArray = str.split(separator);
-		return categoryArray.map((item, index) => (
-			<Badge
-				variant={"outline"}
-				key={index}
-				className="text-vegas-gold border border-white-2 px-3 rounded-xl text-pretty capitalize"
-			>
-				{item}
-			</Badge>
-		));
-	}
+interface Props {
+	category: {
+		value: string;
+		label: string;
+	}[];
+}
 
-	let comma = ",";
+const Tags = ({ category }: Props) => {
 	return (
 		<div className="ml-3 flex flex-wrap gap-2 text-fs-5">
-			{splitStr(category, comma)}
+			{category.map((tag, index) => (
+				<Badge
+					variant="outline"
+					key={index}
+					className="text-vegas-gold border border-white-2 px-3 rounded-xl text-pretty capitalize"
+				>
+					{tag.label}
+				</Badge>
+			))}
 		</div>
 	);
 };
