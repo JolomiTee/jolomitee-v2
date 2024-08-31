@@ -17,7 +17,10 @@ interface ProjectProps {
 	name: string;
 	link: string;
 	img: StaticImageData;
-	category: string;
+	category: {
+		value: string;
+		label: string;
+	}[];
 	responsive: boolean;
 	// id: string;
 }
@@ -71,7 +74,7 @@ const Page = () => {
 								img={project.img}
 								responsive={project.responsive}
 							/>
-							<Tags category={project.category} />
+							{/* <Tags category={project.category} /> */}
 							<Separator className="my-5" />
 						</li>
 					))}

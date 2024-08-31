@@ -45,7 +45,10 @@ interface Project {
 	name: string;
 	link: string;
 	img: StaticImageData;
-	category: string;
+	category: {
+		value: string;
+		label: string;
+	}[];
 	responsive: boolean;
 }
 
@@ -82,7 +85,7 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 						className="w-[150px] justify-between"
 					>
 						{value
-							? tags.find((tags) => tags.value === value)?.label
+							? _projects.find((tags) => tags.value === value)?.label
 							: "Select tag"}
 						<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 					</Button>
