@@ -5,11 +5,17 @@ import { projects } from "@/lib/data";
 import { useState } from "react";
 
 import { Input } from "@/components/ui/input";
+import {
+	HoverCard,
+	HoverCardContent,
+	HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 import AdvancedFilter from "@/components/AdvancedFilter";
 import Tags from "@/components/my_projects/Tags";
 import { StaticImageData } from "next/image";
 import Project from "@/components/my_projects/Project";
+import { InfoIcon } from "lucide-react";
 
 interface ProjectProps {
 	name: string;
@@ -50,7 +56,17 @@ const Page = () => {
 					onChange={handleSearch}
 				/>
 
-				<AdvancedFilter _projects={_projects} _setProjects={_setProjects} />
+				<div className="flex justify-center items-center gap-2">
+					<AdvancedFilter _projects={_projects} _setProjects={_setProjects} />
+					<HoverCard>
+						<HoverCardTrigger>
+							<InfoIcon className="text-orange-yellow-crayola w-5 h-5" />
+						</HoverCardTrigger>
+						<HoverCardContent className="text-sm bg-smoky-black/70 backdrop-blur-sm shadow-2 text-white">
+							Tags are keywords associated with each project
+						</HoverCardContent>
+					</HoverCard>
+				</div>
 			</div>
 
 			<section className="projects">
