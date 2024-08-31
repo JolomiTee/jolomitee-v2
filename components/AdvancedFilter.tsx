@@ -45,8 +45,8 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 
 	const [originalProjects] = useState(_projects); // Store the original list
 
-	const handleComboSearch = (value: string) => {
-		const searchValue = value.toLowerCase();
+	const handleComboSearch = (selectedTag: string) => {
+		const searchValue = selectedTag.toLowerCase();
 		const filtered = originalProjects.filter((project) => {
 			// Check if any of the tags in the project match the search value
 			return project.category.some((tag) =>
@@ -56,9 +56,9 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 		_setProjects(filtered);
 	};
 
-	const extractUniqueTags = (originalProjects: Project[]): Tag[] => {
+	const extractUniqueTags = (projects: Project[]): Tag[] => {
 		// Flatten the categories from all projects
-		const allTags = originalProjects.flatMap((project) => project.category);
+		const allTags = projects.flatMap((project) => project.category);
 
 		// Use a Set to filter out duplicates
 		const uniqueTags = Array.from(new Set(allTags.map((tag) => tag.value))).map(
@@ -68,7 +68,7 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 		return uniqueTags;
 	};
 
-	const uniqueTags = extractUniqueTags(_projects);
+	const uniqueTags = extractUniqueTags(originalProjects);
 
 	return (
 		<div className="flex justify-between gap-5 items-center">
@@ -78,7 +78,7 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 						variant="outline"
 						role="combobox"
 						aria-expanded={openCombobox}
-						className="w-[150px] justify-between"
+						className="w-[200px] justify-between"
 					>
 						{value
 							? _projects
@@ -88,7 +88,7 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 						<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 					</Button>
 				</PopoverTrigger>
-				<PopoverContent className="w-[150px] p-0">
+				<PopoverContent className="w-[200px] p-0">
 					<Command>
 						<CommandInput placeholder="Search tag" />
 						<CommandList>
