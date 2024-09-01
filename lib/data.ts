@@ -1,3 +1,11 @@
+export const schoolInfo = [
+	{
+		school: "Federal University of Technology Akure",
+		startDate: "January 2017",
+		endDate: "January 2024",
+	},
+];
+
 export const toolsInfo = [
 	{
 		name: "HTML",
