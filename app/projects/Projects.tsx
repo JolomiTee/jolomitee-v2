@@ -2,6 +2,7 @@
 
 import AdvancedFilter from "@/components/AdvancedFilter";
 import Project from "@/components/my_projects/Project";
+import Tags from "@/components/my_projects/Tags";
 import {
 	HoverCard,
 	HoverCardContent,
@@ -59,15 +60,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 			<section className="projects">
 				<ul className="project-list flex justify-center flex-wrap gap-8 mb-3">
 					{_projects.map((project, index) => {
-						const {
-							_id,
-							project_link,
-							project_name,
-							category,
-							image,
-							slug,
-							tags,
-						} = project;
+						const { _id, project_link, project_name, category, image, tags } =
+							project;
 						return (
 							<li key={index} className="project-item block">
 								<Project
@@ -75,8 +69,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 									project_link={project_link}
 									project_name={project_name}
 									image={image}
+									category={category}
 								/>
-								{/* <Tags category={project.category} /> */}
+								<Tags category={tags} />
 							</li>
 						);
 					})}
