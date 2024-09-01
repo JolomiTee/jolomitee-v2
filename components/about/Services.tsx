@@ -20,7 +20,7 @@ const info = [
 const Services = () => {
 	return (
 		<section className="service mb-8">
-			<h2 className="h3 service-title mb-5">What I'm Doing</h2>
+			<h2 className="h3 service-title mb-5">What I&apos;m Doing</h2>
 			<ul className="service-list grid grid-cols-1 gap-6 xl:grid-cols-2">
 				{info.map((item, index) => (
 					<li
