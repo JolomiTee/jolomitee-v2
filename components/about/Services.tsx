@@ -7,13 +7,13 @@ const info = [
 		img: IconDev,
 		alt: "Design icon",
 		title: "Web Design and Development",
-		text: "I bring a wealth of hands-on expertise in frontend web development, specializing in crafting dynamic, standards-compliant websites. With a strong proficiency in modern technologies, I focus on developing functional and visually appealing user interfaces. My ability to seamlessly integrate into development teams ensures the efficient delivery of high-quality web products. Additionally, I am currently expanding my knowledge into backend development, enhancing my ability to contribute to full-stack projects.",
+		text: "I bring expertise in frontend web development, crafting dynamic, standards-compliant websites with modern technologies. Focused on creating functional and visually appealing interfaces, I seamlessly integrate into development teams to deliver high-quality web products.",
 	},
 	{
 		img: DesignIcon,
 		alt: "Development icon",
 		title: "#OpenToWork",
-		text: "I confidently offer my expertise to clients and businesses seeking pixel-perfect webpage creation from design prototypes. My focus is on developing highly responsive and user-friendly interfaces that are accessible to a diverse audience. Whether it's crafting a landing page or building a complex web application interface, I guarantee impeccable delivery and a seamless user experience. With a commitment to excellence and attention to detail, I ensure that every project meets set standards.",
+		text: "I offer my expertise to clients and businesses seeking pixel-perfect webpage creation from design prototypes. I focus on developing responsive, user-friendly interfaces for diverse audiences. From landing pages to complex web app interfaces, I guarantee impeccable delivery and a seamless user experience, ensuring every project meets high standards.",
 	},
 ];
 
@@ -39,7 +39,7 @@ const Services = () => {
 							<p className="h4 service-item-title mb-2 lg:text-fs-2">
 								{item.title}
 							</p>
-							<p className="service-item-text text-light-gray text-fs-5 lg:text-fs-4 font-fw-300 leading-[1.6]">
+							<p className="service-item-text text-light-gray text-fs-5 lg:text-fs-4 font-fw-300">
 								{item.text}
 							</p>
 						</div>
