@@ -55,6 +55,7 @@ const Page = async () => {
 							end_date,
 							description,
 							company_link,
+							link_text,
 						} = experience;
 						return (
 							<ListItem
@@ -65,6 +66,7 @@ const Page = async () => {
 								end_date={end_date}
 								description={description}
 								company_link={company_link}
+								link_text={link_text}
 							/>
 						);
 					})}

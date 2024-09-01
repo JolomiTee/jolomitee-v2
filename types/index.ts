@@ -5,6 +5,7 @@ export interface Experience {
 	end_date: string;
 	description: string;
 	company_link: string;
+	link_text: string;
 }
 [];
 

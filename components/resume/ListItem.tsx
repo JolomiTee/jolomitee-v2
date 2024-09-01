@@ -9,6 +9,7 @@ const ListItem = ({
 	end_date,
 	description,
 	company_link,
+	link_text,
 }: Experience) => {
 	return (
 		<li className="timeline-item relative">
@@ -28,7 +29,7 @@ const ListItem = ({
 						className="flex items-center gap-1"
 						href={company_link}
 					>
-						Check this company out <ArrowUpRight className="w-5 h-4" />
+						{link_text} <ArrowUpRight className="w-5 h-4" />
 					</Link>
 				)}
 			</p>
