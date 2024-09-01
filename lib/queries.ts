@@ -7,7 +7,8 @@ export const getAllExperience = groq`*[_type == 'frontend_experience']
    start_date,
    end_date,
    "description": description[].children[].text,
-   company_link
+   company_link,
+   link_text
 }`;
 
 export const getProjectTags = groq`*[_type == 'tags'] | order(label asc) {

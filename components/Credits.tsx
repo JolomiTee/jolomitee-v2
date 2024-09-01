@@ -10,8 +10,6 @@ const Credits = () => {
 				<Image width={70} height={30} src="/vercel.svg" alt="Vercel" />
 				<Image width={30} height={30} src="/shadcn.png" alt="Shadcn-ui" />
 				<Image width={30} height={30} src="/tailwind.svg" alt="nextjs" />
-				{/*
-				 */}
 			</div>
 		</div>
 	);

@@ -58,5 +58,10 @@ export default defineType({
 			title: "Company link",
 			type: "url",
 		}),
+		defineField({
+			name: "link_text",
+			title: "Link Text",
+			type: "string",
+		}),
 	],
 });
