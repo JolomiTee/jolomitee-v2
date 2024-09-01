@@ -42,7 +42,7 @@ const MyClients = () => {
 						>
 							<Image
 								src={items.img}
-								alt={items.name}
+								alt={`${items.name} logo`}
 								className="rounded-[15px] w-[100px] mx-auto"
 								width={100}
 							/>

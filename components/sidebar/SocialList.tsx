@@ -29,11 +29,12 @@ const SocialList = () => {
 					<Link
 						role="link"
 						href={items.href}
-						aria-description={`Find Jolomi Taiwo on ${items.title}`}
+						aria-label={`Find Jolomi Taiwo on ${items.title}`}
 						target="_blank"
 						title={`Jolomi Taiwo on ${items.title}`}
 						className="social-link text-light-gray-70 text-fs-5 xl:text-fs-3 hover:text-white flex gap-1 items-center"
 					>
+						<span className="sr-only">See Jolomi Taiwo on </span>
 						{items.title} <ArrowUpRight className="w-3 h-3" />
 					</Link>
 				</li>

@@ -10,7 +10,14 @@ export const metadata: Metadata = {
 const Page = async () => {
 	const projects = await getProjects(); // Fetch projects server-side
 
-	return <Projects projects={projects} />;
+	return (
+		<>
+			<header>
+				<h1 className="h2 main-title mb-6">My Projects</h1>
+			</header>
+			<Projects projects={projects} />;
+		</>
+	);
 };
 
 export default Page;

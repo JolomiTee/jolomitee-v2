@@ -20,7 +20,7 @@ const info = [
 const Services = () => {
 	return (
 		<section className="service mb-8">
-			<h3 className="h3 service-title mb-5">What I'm Doing</h3>
+			<h2 className="h3 service-title mb-5">What I'm Doing</h2>
 			<ul className="service-list grid grid-cols-1 gap-6 xl:grid-cols-2">
 				{info.map((item, index) => (
 					<li
@@ -36,9 +36,9 @@ const Services = () => {
 							/>
 						</div>
 						<div className="service-content-box text-center md:text-start">
-							<h4 className="h4 service-item-title mb-2 lg:text-fs-2">
+							<p className="h4 service-item-title mb-2 lg:text-fs-2">
 								{item.title}
-							</h4>
+							</p>
 							<p className="service-item-text text-light-gray text-fs-5 lg:text-fs-4 font-fw-300 leading-[1.6]">
 								{item.text}
 							</p>

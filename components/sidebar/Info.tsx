@@ -1,16 +1,19 @@
 import { Cake, Globe, LucideMail, PhoneCall } from "lucide-react";
+import Link from "next/link";
 
 const info = {
 	items: [
 		{
 			icon: <LucideMail />,
 			contact_title: "Email",
+			title: "Send me a mail",
 			attr: "mailto:jolomitee@gmail.com",
 			value: "jolomitee@gmail.com",
 		},
 		{
 			icon: <PhoneCall />,
 			contact_title: "Phone",
+			title: "Call me",
 			attr: "tel:+123 456 7890",
 			value: "+234 906 160 3717",
 		},
@@ -51,9 +54,16 @@ const Info = () => {
 							) : items.element === "address" ? (
 								<address>{items.value}</address>
 							) : (
-								<a href={items.attr} className="contact-link">
-									{items.value}
-								</a>
+								items.attr && (
+									<Link
+										title={items.title}
+										href={items.attr}
+										target="_blank"
+										className="contact-link"
+									>
+										{items.value}
+									</Link>
+								)
 							)}
 						</div>
 					</li>

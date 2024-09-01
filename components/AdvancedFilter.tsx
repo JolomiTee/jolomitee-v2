@@ -15,8 +15,8 @@ import {
 	PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import React, { useState } from "react";
 import { ProjectTypes, Tag } from "@/types";
+import React, { useState } from "react";
 
 interface Props {
 	_projects: ProjectTypes[];
@@ -27,24 +27,23 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 	const [openCombobox, setOpenCombobox] = useState(false);
 	const [value, setValue] = useState("");
 
-	const [originalProjects] = useState(_projects); // Store the original list
+	const [originalProjects] = useState(_projects);
 
 	const handleComboSearch = (selectedTag: string) => {
 		const searchValue = selectedTag.toLowerCase();
+
 		const filtered = originalProjects.filter((project) => {
-			// Check if any of the tags in the project match the search value
 			return project.tags.some((tag) =>
 				tag.value.toLowerCase().includes(searchValue)
 			);
 		});
+
 		_setProjects(filtered);
 	};
 
 	const extractUniqueTags = (projects: ProjectTypes[]): Tag[] => {
-		// Flatten the tags from all projects
 		const allTags = projects.flatMap((project) => project.tags);
 
-		// Use a Map to ensure uniqueness by value, and to retain full tag objects
 		const uniqueTagsMap = new Map<string, Tag>();
 
 		allTags.forEach((tag) => {
@@ -53,7 +52,6 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 			}
 		});
 
-		// Convert the map values to an array to get the list of unique tags
 		return Array.from(uniqueTagsMap.values());
 	};
 
@@ -64,6 +62,7 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 			<Popover open={openCombobox} onOpenChange={setOpenCombobox}>
 				<PopoverTrigger asChild>
 					<Button
+						title="Search tags"
 						variant="outline"
 						role="combobox"
 						aria-expanded={openCombobox}

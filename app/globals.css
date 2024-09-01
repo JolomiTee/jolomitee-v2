@@ -113,29 +113,27 @@ main.active {
    }
 }
 
-.h2,
-h3,
-h4,
-.h5 {
+/* Shared styles for all headings */
+.heading-common {
    @apply text-white-2 capitalize;
 }
 
+/* Individual styles for specific heading levels */
 .h2 {
-   @apply text-fs-1;
+   @apply heading-common text-fs-1;
 }
 
 .h3 {
-   @apply text-fs-2;
+   @apply heading-common text-fs-2;
 }
 
 .h4 {
-   @apply text-fs-4;
+   @apply heading-common text-fs-4;
 }
 
 .h5 {
-   @apply text-fs-5 font-fw-500;
+   @apply heading-common text-fs-5 font-fw-500;
 }
-
 .main-title {
    @apply relative pb-2 mb-6 md:font-fw-600 md:pb-4;
 }

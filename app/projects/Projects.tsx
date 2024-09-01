@@ -32,12 +32,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
 	return (
 		<>
-			<header>
-				<h2 className="h2 main-title mb-6">My Projects</h2>
-			</header>
-
 			<div className="relative mt-5 mb-7 xl:flex items-center justify-between gap-5 hidden">
 				<Input
+					id="SearchProjects"
 					placeholder="Search project"
 					value={search}
 					className="w-1/3 bg-transparent text-white"
