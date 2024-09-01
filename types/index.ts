@@ -14,7 +14,6 @@ export interface ProjectTypes {
 	category: string;
 	project_name: string;
 	image: string;
-	slug: string;
 	tags: Tag[];
 }
 [];
