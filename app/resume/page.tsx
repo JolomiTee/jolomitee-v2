@@ -6,7 +6,11 @@ import { client } from "@/sanity/lib/client";
 import { getAllExperience } from "@/lib/queries";
 import { Experience } from "@/types";
 import ListItem from "@/components/resume/ListItem";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+	title: "Resume",
+};
 const Page = async () => {
 	const experiences = await client.fetch<Experience[]>(getAllExperience);
 	return (
