@@ -1,5 +1,5 @@
 import React from "react";
-import { schoolInfo, developmentInfo, toolsInfo } from "@/lib/data";
+import { schoolInfo, toolsInfo } from "@/lib/data";
 import { BookMarkedIcon, Workflow } from "lucide-react";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";

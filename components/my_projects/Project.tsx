@@ -1,20 +1,20 @@
 import { Eye } from "lucide-react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
+import { ProjectTypes } from "@/types";
+import { urlFor } from "@/sanity/lib/image";
 
-interface Project {
-	name: string;
-	link: string;
-	img: StaticImageData;
-	responsive: boolean;
-}
-
-const Project = ({ name, link, img, responsive }: Project) => {
+const Project = ({ _id, project_link, project_name, image }: ProjectTypes) => {
 	return (
-		<Link className="w-full" target="_blank" href={link}>
+		<Link
+			id={_id}
+			className="w-full"
+			target="_blank"
+			href={project_link ? project_link : ""}
+		>
 			<figure className="project-img relative  aspect-video rounded-2xl overflow-hidden mb-4 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-opacity-0 z-[1] transition-1">
-				{link !== "" ? (
+				{project_link !== "" ? (
 					<div className="project-item-icon-box scale-.75">
 						<Eye />
 					</div>
@@ -25,15 +25,16 @@ const Project = ({ name, link, img, responsive }: Project) => {
 				)}
 
 				<Image
-					src={img}
-					alt={name}
+					src={urlFor(image).url()}
+					alt={project_name}
 					loading="lazy"
+					fill
 					className="w-full h-full object-cover lg:object-fill transition-1"
 				/>
 			</figure>
 
 			<h3 className="project-title ml-3 mb-2 text-white-1 text-fs-4 font-fw-400 capitalize leading-[1.3]">
-				{name}
+				{project_name}
 			</h3>
 		</Link>
 	);

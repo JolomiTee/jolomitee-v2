@@ -8,7 +8,7 @@ export interface Experience {
 }
 [];
 
-export interface Project {
+export interface ProjectTypes {
 	_id: string;
 	project_link: string;
 	category: string;
