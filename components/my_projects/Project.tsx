@@ -2,10 +2,23 @@ import { Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
-import { ProjectTypes } from "@/types";
 import { urlFor } from "@/sanity/lib/image";
+interface ProjectTypesProps {
+	_id: string;
+	project_link: string;
+	category: string;
+	project_name: string;
+	image: string;
+}
+[];
 
-const Project = ({ _id, project_link, project_name, image }: ProjectTypes) => {
+const Project = ({
+	_id,
+	project_link,
+	project_name,
+	image,
+	category,
+}: ProjectTypesProps) => {
 	return (
 		<Link
 			id={_id}
@@ -14,7 +27,7 @@ const Project = ({ _id, project_link, project_name, image }: ProjectTypes) => {
 			href={project_link ? project_link : ""}
 		>
 			<figure className="project-img relative  aspect-video rounded-2xl overflow-hidden mb-4 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-opacity-0 z-[1] transition-1">
-				{project_link !== "" ? (
+				{project_link ? (
 					<div className="project-item-icon-box scale-.75">
 						<Eye />
 					</div>
