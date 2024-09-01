@@ -45,11 +45,16 @@ export default defineType({
 			title: "Deployment link",
 			type: "url",
 		}),
-		defineField({
+		{
 			name: "tags",
-			title: "Relevant Tags",
+			title: "Tags",
 			type: "array",
-			of: [{ type: "string" }],
-		}),
+			of: [
+				{
+					type: "reference",
+					to: [{ type: "tags" }],
+				},
+			],
+		},
 	],
 });

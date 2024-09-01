@@ -28,14 +28,23 @@ export default defineType({
 			validation: (rule) => rule.required().error(`Required field`),
 		}),
 		defineField({
-			name: "end_date",
-			title: "End date",
-			type: "date",
-		}),
-		defineField({
 			name: "currently_working",
 			title: "Currently working?",
 			type: "boolean",
+		}),
+		defineField({
+			name: "end_date",
+			title: "End date",
+			type: "date",
+			readOnly: ({ document }) => document?.currently_working === true, // Disable if currently working
+			validation: (rule) =>
+				rule.custom((endDate, context) => {
+					const currentlyWorking = context.document?.currently_working;
+					if (currentlyWorking && endDate) {
+						return "End date should be empty if currently working";
+					}
+					return true;
+				}),
 		}),
 		defineField({
 			name: "description",
