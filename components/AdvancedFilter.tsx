@@ -15,28 +15,12 @@ import {
 	PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { StaticImageData } from "next/image";
 import React, { useState } from "react";
-
-interface Tag {
-	value: string;
-	label: string;
-}
-
-interface Project {
-	name: string;
-	link: string;
-	img: StaticImageData;
-	category: {
-		value: string;
-		label: string;
-	}[];
-	responsive: boolean;
-}
+import { ProjectTypes, Tag } from "@/types";
 
 interface Props {
-	_projects: Project[];
-	_setProjects: React.Dispatch<React.SetStateAction<Project[]>>;
+	_projects: ProjectTypes[];
+	_setProjects: React.Dispatch<React.SetStateAction<ProjectTypes[]>>;
 }
 
 const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
@@ -49,23 +33,28 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 		const searchValue = selectedTag.toLowerCase();
 		const filtered = originalProjects.filter((project) => {
 			// Check if any of the tags in the project match the search value
-			return project.category.some((tag) =>
+			return project.tags.some((tag) =>
 				tag.value.toLowerCase().includes(searchValue)
 			);
 		});
 		_setProjects(filtered);
 	};
 
-	const extractUniqueTags = (projects: Project[]): Tag[] => {
-		// Flatten the categories from all projects
-		const allTags = projects.flatMap((project) => project.category);
+	const extractUniqueTags = (projects: ProjectTypes[]): Tag[] => {
+		// Flatten the tags from all projects
+		const allTags = projects.flatMap((project) => project.tags);
 
-		// Use a Set to filter out duplicates
-		const uniqueTags = Array.from(new Set(allTags.map((tag) => tag.value))).map(
-			(value) => allTags.find((tag) => tag.value === value)!
-		);
+		// Use a Map to ensure uniqueness by value, and to retain full tag objects
+		const uniqueTagsMap = new Map<string, Tag>();
 
-		return uniqueTags;
+		allTags.forEach((tag) => {
+			if (!uniqueTagsMap.has(tag.value)) {
+				uniqueTagsMap.set(tag.value, tag);
+			}
+		});
+
+		// Convert the map values to an array to get the list of unique tags
+		return Array.from(uniqueTagsMap.values());
 	};
 
 	const uniqueTags = extractUniqueTags(originalProjects);
@@ -81,9 +70,8 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 						className="w-[200px] justify-between opacity-80 text-black/80"
 					>
 						{value
-							? _projects
-									.flatMap((project) => project.category)
-									.find((tag) => tag.value === value)?.label || "Tag not found"
+							? uniqueTags.find((tag) => tag.value === value)?.label ||
+								"Tag not found"
 							: "Select tag"}
 						<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 					</Button>

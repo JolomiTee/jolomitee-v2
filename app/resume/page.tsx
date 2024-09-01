@@ -1,9 +1,14 @@
 import React from "react";
-import { schoolInfo, developmentInfo, toolsInfo } from "@/lib/data";
+import { schoolInfo, toolsInfo } from "@/lib/data";
 import { BookMarkedIcon, Workflow } from "lucide-react";
 import Image from "next/image";
+import { client } from "@/sanity/lib/client";
+import { getAllExperience } from "@/lib/queries";
+import { Experience } from "@/types";
+import ListItem from "@/components/resume/ListItem";
 
-const Page = () => {
+const Page = async () => {
+	const experiences = await client.fetch<Experience[]>(getAllExperience);
 	return (
 		<>
 			<header>
@@ -42,24 +47,27 @@ const Page = () => {
 				</div>
 
 				<ul className="timeline-list text-fs-6 ml-11">
-					{developmentInfo.map((items, index) => (
-						<li key={index} className="timeline-item relative">
-							<h4 className="h4 timelime-item-title text-fs-6 lg:text-fs-4 leading-[1.3] mb-2">
-								{items.devExperience}
-							</h4>
-
-							<span className="text-vegas-gold font-fw-400 leading-[1.6] text-fs-5">
-								{items.duration}
-							</span>
-
-							<p className="timeline-text text-light-gray font-fw-300 leading-[1.6] text-fs-5 lg:text-fs-4">
-								{items.text}
-								<a target="_blank" href={items.link}>
-									{items.linkText}
-								</a>
-							</p>
-						</li>
-					))}
+					{experiences.map((experience, index) => {
+						const {
+							company,
+							currently_working,
+							start_date,
+							end_date,
+							description,
+							company_link,
+						} = experience;
+						return (
+							<ListItem
+								key={index}
+								company={company}
+								currently_working={currently_working}
+								start_date={start_date}
+								end_date={end_date}
+								description={description}
+								company_link={company_link}
+							/>
+						);
+					})}
 				</ul>
 			</section>
 
