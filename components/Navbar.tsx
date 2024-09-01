@@ -21,7 +21,7 @@ const links = [
 const Navbar = () => {
 	const pathname = usePathname();
 	return (
-		<nav className="fixed bottom-0 left-0 w-full bg-gradient-onyx rounded-tl-xl rounded-tr-xl shadow-2 z-[5] backdrop-blur-navbar md:rounded-tl-[20px] md:rounded-tr-[20px] lg:text-fs-5 xl:absolute xl:bottom-auto xl:top-[0px] xl:left-auto xl:right-[0px] 2xl:right-[-11px] xl:w-max xl:py-0 xl:px-5 xl:rounded-tl-none xl:rounded-bl-3xl 2xl:top-[6px]">
+		<nav className="fixed bottom-0 left-0 w-full bg-gradient-onyx rounded-tl-xl rounded-tr-xl shadow-2 z-[5] backdrop-blur-navbar md:rounded-tl-[20px] md:rounded-tr-[20px] lg:text-fs-5 xl:absolute xl:bottom-auto xl:top-[0px] xl:left-auto xl:right-[0px] 2xl:right-[-12px] xl:w-max xl:py-0 xl:px-5 xl:rounded-tl-none xl:rounded-bl-3xl 2xl:top-[6px]">
 			<ul className="navbar-list flex flex-wrap justify-center items-center py-1 px-3 md:gap-5 xl:gap-8">
 				{links.map((link, index) => (
 					<li

@@ -27,12 +27,14 @@ const Project = ({
 			href={project_link ? project_link : ""}
 		>
 			<figure className="project-img relative  aspect-video rounded-2xl overflow-hidden mb-4 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-opacity-0 z-[1] transition-1">
-				{project_link ? (
+				{project_link !== undefined &&
+				project_link !== null &&
+				project_link !== "" ? (
 					<div className="project-item-icon-box scale-.75">
 						<Eye />
 					</div>
 				) : (
-					<Badge variant={"destructive"} className="absolute top-2 right-2 ">
+					<Badge variant={"secondary"} className="absolute top-2 right-2 z-10">
 						Awaiting deployment
 					</Badge>
 				)}
