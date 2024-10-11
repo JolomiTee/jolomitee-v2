@@ -12,7 +12,7 @@ export default function Home() {
 
 			<section className="text-light-gray text-fs-5 font-fw-300 leading-[1.6] mb-4 md:mb-6 lg:text-fs-4">
 				<p className="">
-					I am a Frontend Engineer with 2 years of experience in creating
+					I am a Frontend Engineer with hands on experience in creating
 					functional, responsive, and visually appealing websites using modern
 					frontend development tools. My expertise lies in the art of
 					transforming design concepts into interactive and high-quality
