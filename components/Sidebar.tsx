@@ -46,7 +46,7 @@ const Sidebar = () => {
 						</p>
 
 						<p className="title text-white-1 bg-onyx text-fs-7 lg:text-fs-6 font-fw-300 rounded-lg px-3 py-1 text-center flex items-center gap-1 justify-center w-fit mx-auto">
-							Newbie Backend Developer{" "}
+							Backend Enthusiast{" "}
 							<Stars className="text-orange-yellow-crayola w-3 h-3" />
 						</p>
 					</div>
