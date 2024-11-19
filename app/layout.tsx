@@ -5,6 +5,7 @@ import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
 import SocialList from "@/components/sidebar/SocialList";
 import Credits from "@/components/Credits";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,6 +60,7 @@ export default function RootLayout({
 					<Credits />
 				</footer>
 			</body>
+			<Analytics />
 		</html>
 	);
 }

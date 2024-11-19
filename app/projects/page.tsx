@@ -15,7 +15,7 @@ const Page = async () => {
 			<header>
 				<h1 className="h2 main-title mb-6">My Projects</h1>
 			</header>
-			<Projects projects={projects} />;
+			<Projects projects={projects} />
 		</>
 	);
 };
