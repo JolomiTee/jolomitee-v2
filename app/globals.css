@@ -439,10 +439,9 @@ main.active {
    }
 }
 /* VIEW TRANSITIONS */
+::view-transition-group(*) {
+	animation-duration: .4s;
+}
 .vt_main_title {
 	view-transition-name: main-title;
-}
-
-::view-transition-group(*) {
-	animation-duration: .3s;
 }

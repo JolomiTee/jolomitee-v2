@@ -20,12 +20,12 @@ const Project = ({
 }: ProjectTypesProps) => {
 	return (
 		<Link
-			href={`/${slug}`}
+			// href={`/${slug}`}
 			id={slug}
 			className="w-full"
-			// target="_blank"
+			target="_blank"
 			aria-label={`Project name: ${project_name}`}
-			// href={project_link ? project_link : ""}
+			href={project_link ? project_link : ""}
 		>
 			<figure className="project-img relative  aspect-video rounded-2xl overflow-hidden mb-4 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-opacity-0 z-[1] transition-1">
 				{project_link !== undefined &&

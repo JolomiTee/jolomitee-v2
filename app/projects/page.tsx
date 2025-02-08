@@ -1,7 +1,7 @@
 // components/Page.tsx (Server Component)
 import { Metadata } from "next";
 import { getProjects } from "../actions";
-import Projects from "./Projects";
+import Projects from "@/components/my_projects/Projects";
 
 export const metadata: Metadata = {
 	title: "Projects",
