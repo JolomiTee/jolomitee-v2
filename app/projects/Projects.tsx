@@ -42,7 +42,10 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 				/>
 
 				<div className="flex justify-center items-center gap-2">
-					<AdvancedFilter _projects={_projects} _setProjects={_setProjects} />
+					<AdvancedFilter
+						_projects={_projects}
+						_setProjects={_setProjects}
+					/>
 					<HoverCard>
 						<HoverCardTrigger>
 							<InfoIcon className="text-orange-yellow-crayola w-5 h-5" />
@@ -57,12 +60,18 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 			<section className="projects">
 				<ul className="project-list flex justify-center flex-wrap gap-8 mb-3">
 					{_projects.map((project, index) => {
-						const { _id, project_link, project_name, category, image, tags } =
-							project;
+						const {
+							slug,
+							project_link,
+							project_name,
+							category,
+							image,
+							tags,
+						} = project;
 						return (
 							<li key={index} className="project-item block">
 								<Project
-									_id={_id}
+									slug={slug}
 									project_link={project_link}
 									project_name={project_name}
 									image={image}
