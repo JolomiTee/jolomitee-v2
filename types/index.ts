@@ -12,12 +12,13 @@ export interface Experience {
 export interface ProjectTypes {
 	slug: string;
 	project_link: string;
-	category: string;
+	tags: {
+		value: string;
+		label: string;
+	}[];
 	project_name: string;
 	image: string;
-	tags: Tag[];
 }
-[];
 
 export interface Tag {
 	value: string;
