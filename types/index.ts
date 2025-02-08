@@ -10,7 +10,7 @@ export interface Experience {
 [];
 
 export interface ProjectTypes {
-	_id: string;
+	slug: string;
 	project_link: string;
 	category: string;
 	project_name: string;
