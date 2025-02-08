@@ -438,3 +438,10 @@ main.active {
       opacity: 0;
    }
 }
+/* VIEW TRANSITIONS */
+::view-transition-group(*) {
+	animation-duration: .4s;
+}
+.vt_main_title {
+	view-transition-name: main-title;
+}
