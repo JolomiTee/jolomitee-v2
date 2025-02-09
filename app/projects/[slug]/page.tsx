@@ -1,95 +1,80 @@
-import Tags from '@/components/my_projects/Tags';
-import { ExternalLink } from 'lucide-react';
-import { Link } from 'next-view-transitions';
-import Image from 'next/image';
-import React from 'react'
+"use client";
 
+import GithubStarButton from "@/components/my_projects/GithubStarButton";
+import Tags from "@/components/my_projects/Tags";
+import { useProjectStore } from "@/hooks/use-project";
+import { urlFor } from "@/sanity/lib/image";
+import { ExternalLink } from "lucide-react";
+import { Link } from "next-view-transitions";
+import Image from "next/image";
+import React from "react";
+import GitHubButton from "react-github-btn";
 const page = () => {
-	const tags = [
-		{
-			value: "html",
-			label: "HTML"
-		},
-		{
-			value: "css",
-			label: "CSS"
-		},
-		{
-			value: "javasscript",
-			label: "JS"
-		},
-		{
-			value: "react",
-			label: "React"
-		},
-		{
-			value: "typescript",
-			label: "Typescript"
-		}
-	]
-  return (
+	const project = useProjectStore((state) => state.project);
+	if (!project) {
+		return <p>loading</p>;
+	}
+	console.log(project);
+	const { slug, project_link, project_name, image, tags } = project;
+	return (
 		<>
 			<header>
-				<h1 className="h2 main-title vt_main_title">Project Title</h1>
+				<h1 className="h2 main-title vt_main_title">{project_name}</h1>
 			</header>
 
-			<div className="flex flex-col md:flex-row gap-[30px]">
+			<div className="flex flex-col lg:flex-row gap-[30px] min-w-[50%]">
 				<div className="rounded-xl overflow-hidden">
 					<Image
-						src={"/RagChat.png"}
+						src={urlFor(image).url()}
 						width={1000}
 						height={1000}
-						alt="Picture"
+						alt={project_name}
 					/>
 				</div>
 
-				<div className="flex flex-col gap-[10px] min-w-[40%]">
+				<div className="flex flex-col gap-[10px]">
 					<div>
 						<span className="font-bold text-[15px]">Deployment</span>
 						<Link
 							className="flex items-center gap-2 underline text-white font-medium text-sm font-mono"
-							href={"#"}
+							href={project_link}
 						>
-							http://blahblahblah.com <ExternalLink className="size-4" />
+							{project_link} <ExternalLink className="size-4" />
 						</Link>
 					</div>
 					<div>
-						<span className="font-bold text-[15px]">Github</span>
-						<Link
-							className="flex items-center gap-2 underline text-white font-medium text-sm font-mono"
-							href={"#"}
+						<span className="font-bold text-[15px] mb-2">Github</span>
+						<GitHubButton
+							href="https://github.com/jolomiTee/talktome"
+							data-color-scheme="no-preference: light; light: light; dark: dark;"
+							data-icon="octicon-star"
+							data-size="large"
+							aria-label="Star jolomiTee/talktome on GitHub"
 						>
-							View repo
-							<ExternalLink className="size-4" />
-						</Link>
+							Star
+						</GitHubButton>
 					</div>
-					<div>
-						<span className="font-bold text-[15px]">Status</span>
-						<div className="flex items-center gap-2 text-white font-medium text-sm font-mono">
-							Active
+					<div className="grid gap-[10px]">
+						<div>
+							<span className="font-bold text-[18px]">Details</span>
+							<p className="text-base">
+								Lorem ipsum dolor sit amet consectetur, adipisicing
+								elit. Vero deleniti iusto, libero nobis, autem unde
+								mollitia architecto facere magni aut eius qui aspernatur
+								voluptatum itaque illum animi aliquid similique!
+								Corrupti!
+							</p>
+						</div>
+
+						<div className="">
+							<span className="font-bold text-[18px] mb-2">Tags</span>
+							<Tags tags={tags} />
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<div className="mt-10 flex gap-[15px]">
-				<div>
-					<span className="font-bold text-[15px]">Details</span>
-					<p className='text-sm'>
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero
-						deleniti iusto, libero nobis, autem unde mollitia architecto
-						facere magni aut eius qui aspernatur voluptatum itaque illum
-						animi aliquid similique! Corrupti!
-					</p>
-				</div>
-
-				<div className=" min-w-[30%]">
-					<span className="font-bold text-sm ps-3 mb-2">Tags</span>
-					<Tags category={tags} />
-				</div>
-			</div>
 		</>
-  );
-}
+	);
+};
 
-export default page
+export default page;
