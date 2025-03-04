@@ -36,7 +36,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 					id="SearchProjects"
 					placeholder="Search project"
 					value={search}
-					className="w-1/3 bg-transparent text-white"
+					className="w-1/3 bg-transparent/30 border-none text-white shadow-sm shadow-orange-yellow-crayola hover:bg-transparent/10 hover:text-white placeholder:text-white"
 					onChange={handleSearch}
 				/>
 
