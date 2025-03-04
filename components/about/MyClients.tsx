@@ -1,6 +1,10 @@
 import Williams from "@/public/orgs/Williams.jpeg";
 import Zepama from "@/public/orgs/Zepama.jpg";
 import Adesther from "@/public/orgs/adesther.jpg";
+import Cedarwit from "@/public/orgs/Cedarwit.jpeg";
+import Probueno from "@/public/orgs/Probueno_afri_ltd.png";
+import Netflash from "@/public/orgs/netflash.png";
+import Geoanaltech from "@/public/orgs/Geoanaltech.webp";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,6 +24,26 @@ const info = [
 		name: "Zepama",
 		img: Zepama,
 	},
+	{
+		link: "https://cedarwittechnologies.com/",
+		name: "CedarWit Technologies",
+		img: Cedarwit,
+	},
+	{
+		link: "https://netflash.ch",
+		name: "Netflash",
+		img: Netflash,
+	},
+	{
+		link: "https://geoanaltech.org/",
+		name: "GeoAnalTech",
+		img: Geoanaltech,
+	},
+	{
+		link: "https://www.probuenoafriltd.com/",
+		name: "Pro Bueno AfriLtd",
+		img: Probueno,
+	},
 ];
 
 const MyClients = () => {
@@ -35,17 +59,19 @@ const MyClients = () => {
 					<li key={index} className="client-items min-h-[50%] snap-start">
 						<Link
 							href={items.link}
-							className="grid justify-center items-center gap-3 text-center w-[100px]"
+							className="grid justify-center items-center gap-3 text-center max-w-[100px]"
 							target="_blank"
 							title={items.name}
 							rel="noopener"
 						>
-							<Image
-								src={items.img}
-								alt={`${items.name} logo`}
-								className="rounded-[15px] w-[100px] mx-auto"
-								width={100}
-							/>
+							<div className="size-[100px]">
+								<Image
+									src={items.img}
+									alt={`${items.name} logo`}
+									className="rounded-[15px] w-full h-full object-contain mx-auto"
+									width={120}
+								/>
+							</div>
 							<p className="text-[#fff] text-fs-5">{items.name}</p>
 						</Link>
 					</li>

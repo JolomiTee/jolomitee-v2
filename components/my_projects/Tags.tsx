@@ -2,17 +2,17 @@ import React from "react";
 import { Badge } from "../ui/badge";
 
 interface Props {
-	category: {
+	tags: {
 		value: string;
 		label: string;
 	}[];
 }
 
-const Tags = ({ category }: Props) => {
+const Tags = ({ tags }: Props) => {
 	return (
 		<div className="ml-3 flex flex-wrap gap-2 text-fs-5">
 			<span className="sr-only">This project has the following tags: </span>
-			{category.map((tag, index) => (
+			{tags.map((tag, index) => (
 				<Badge
 					role="complementary"
 					variant="outline"

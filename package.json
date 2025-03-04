@@ -31,12 +31,14 @@
 		"next-view-transitions": "^0.3.4",
 		"react": "^18",
 		"react-dom": "^18",
+		"react-github-btn": "^1.4.0",
 		"react-hook-form": "^7.53.0",
 		"sanity": "^3.56.0",
 		"styled-components": "^6.1.12",
 		"tailwind-merge": "^2.5.2",
 		"tailwindcss-animate": "^1.0.7",
-		"zod": "^3.23.8"
+		"zod": "^3.23.8",
+		"zustand": "^5.0.3"
 	},
 	"devDependencies": {
 		"@types/node": "^20",
