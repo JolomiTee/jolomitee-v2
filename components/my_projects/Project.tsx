@@ -1,4 +1,3 @@
-import { useProjectStore } from "@/hooks/use-project";
 import { urlFor } from "@/sanity/lib/image";
 import { ProjectTypes } from "@/types";
 import { Eye } from "lucide-react";
@@ -14,17 +13,17 @@ const Project = ({
 	image,
 	tags,
 }: ProjectTypes) => {
-	const setProject = useProjectStore((state) => state.setProject);
+	// const setProject = useProjectStore((state) => state.setProject);
 	return (
 		<>
 			<Link
-				href={`/projects/${slug}`}
-				onClick={() =>
-					setProject({ slug, project_link, project_name, image, tags })
-				}
+				href={`${project_link}`}
+				// onClick={() =>
+				// 	setProject({ slug, project_link, project_name, image, tags })
+				// }
 				id={slug}
 				className="w-full"
-				// target="_blank"
+				target="_blank"
 				aria-label={`Project name: ${project_name}`}
 				// href={project_link ? project_link : ""}
 			>

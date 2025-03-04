@@ -1,13 +1,11 @@
 "use client";
 
-import GithubStarButton from "@/components/my_projects/GithubStarButton";
 import Tags from "@/components/my_projects/Tags";
 import { useProjectStore } from "@/hooks/use-project";
 import { urlFor } from "@/sanity/lib/image";
 import { ExternalLink } from "lucide-react";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
-import React from "react";
 import GitHubButton from "react-github-btn";
 const page = () => {
 	const project = useProjectStore((state) => state.project);
@@ -22,7 +20,10 @@ const page = () => {
 				<h1 className="h2 main-title vt_main_title">{project_name}</h1>
 			</header>
 
-			<div className="flex flex-col lg:flex-row gap-[30px] min-w-[50%]">
+			<div
+				id={`${slug}`}
+				className="flex flex-col lg:flex-row gap-[30px] min-w-[50%]"
+			>
 				<div className="rounded-xl overflow-hidden">
 					<Image
 						src={urlFor(image).url()}
