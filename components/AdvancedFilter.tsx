@@ -66,7 +66,7 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 						variant="outline"
 						role="combobox"
 						aria-expanded={openCombobox}
-						className="w-[200px] justify-between opacity-80 text-black/80"
+						className="w-[200px] justify-between bg-transparent/30 text-white shadow-sm shadow-orange-yellow-crayola hover:bg-transparent/10 hover:text-white"
 					>
 						{value
 							? uniqueTags.find((tag) => tag.value === value)?.label ||
@@ -75,14 +75,15 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 						<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
 					</Button>
 				</PopoverTrigger>
-				<PopoverContent className="w-[200px] p-0">
-					<Command>
+				<PopoverContent className="w-[200px] p-0 bg-eerie-black-1">
+					<Command className="bg-eerie-black-2 text-white">
 						<CommandInput placeholder="Search tags" />
-						<CommandList>
+						<CommandList className="">
 							<CommandEmpty>No tag found.</CommandEmpty>
 							<CommandGroup>
 								{uniqueTags.map((tag: Tag) => (
 									<CommandItem
+										className="text-white"
 										key={tag.value}
 										value={tag.value}
 										onSelect={(currentValue) => {
@@ -90,13 +91,18 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 												currentValue === value ? "" : currentValue;
 											setValue(newValue);
 											setOpenCombobox(false);
-											setTimeout(() => handleComboSearch(newValue), 0); // Invoke the search function
+											setTimeout(
+												() => handleComboSearch(newValue),
+												0
+											); // Invoke the search function
 										}}
 									>
 										<Check
 											className={cn(
 												"mr-2 h-4 w-4",
-												value === tag.value ? "opacity-100" : "opacity-0"
+												value === tag.value
+													? "opacity-100"
+													: "opacity-0"
 											)}
 										/>
 										{tag.label}
