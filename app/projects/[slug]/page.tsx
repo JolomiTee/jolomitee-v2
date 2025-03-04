@@ -7,7 +7,7 @@ import { ExternalLink } from "lucide-react";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
 import GitHubButton from "react-github-btn";
-const page = () => {
+const Page = () => {
 	const project = useProjectStore((state) => state.project);
 	if (!project) {
 		return <p>loading</p>;
@@ -78,4 +78,4 @@ const page = () => {
 	);
 };
 
-export default page;
+export default Page;
