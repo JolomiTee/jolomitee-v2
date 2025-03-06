@@ -25,21 +25,21 @@ const Services = () => {
 				{info.map((item, index) => (
 					<li
 						key={index}
-						className="service-item relative bg-gradient-onyx p-5 rounded-[14px] shadow-2 z-[1] before:absolute inset-[1px] before:bg-gradient-jet before:rounded-inherit before:z-[1] md:flex"
+						className="service-item relative bg-gradient-onyx p-5 rounded-[14px] shadow-2 z-[1] before:absolute inset-[1px] before:bg-gradient-jet before:rounded-inherit before:z-[1] md:flex md:gap-5"
 					>
-						<div className="service-icon-box mb-3 w-full md:max-w-[60px]">
+						<div className="service-icon-box mb-3 ">
 							<Image
 								src={item.img}
 								alt={item.alt}
-								className="m-auto md:m-0"
+								className="m-auto md:m-0 w-full max-w-[40px] md:min-w-[35px]"
 								width={30}
 							/>
 						</div>
-						<div className="service-content-box text-center md:text-start">
-							<p className="h4 service-item-title mb-2 lg:text-fs-2">
+						<div className="service-content-box text-center md:text-start flex flex-col gap-2">
+							<p className="h4 service-item-title lg:text-fs-2 leading-none">
 								{item.title}
 							</p>
-							<p className="service-item-text text-light-gray text-fs-5 lg:text-fs-4 font-fw-300">
+							<p className="service-item-text text-light-gray text-fs-5 lg:text-fs-5 font-fw-300">
 								{item.text}
 							</p>
 						</div>
