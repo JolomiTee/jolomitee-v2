@@ -24,31 +24,29 @@ const Services = () => {
 			<section className="service mb-8">
 				<h2 className="h3 service-title mb-5">What I&apos;m Doing</h2>
 				<ul className="service-list grid grid-cols-1 gap-6 xl:grid-cols-2">
-					<Var>
-						{info.map((item, index) => (
-							<li
-								key={index}
-								className="service-item relative bg-gradient-onyx p-5 rounded-[14px] shadow-2 z-[1] before:absolute inset-[1px] before:bg-gradient-jet before:rounded-inherit before:z-[1] md:flex md:gap-5"
-							>
-								<div className="service-icon-box mb-3 ">
-									<Image
-										src={item.img}
-										alt={item.alt}
-										className="m-auto md:m-0 w-full max-w-[40px] md:min-w-[35px]"
-										width={30}
-									/>
-								</div>
-								<div className="service-content-box text-center md:text-start flex flex-col gap-2">
-									<p className="h4 service-item-title lg:text-fs-2 leading-none">
-										{item.title}
-									</p>
-									<p className="service-item-text text-light-gray text-fs-5 lg:text-fs-5 font-fw-300">
-										{item.text}
-									</p>
-								</div>
-							</li>
-						))}
-					</Var>
+					{info.map((item, index) => (
+						<li
+							key={index}
+							className="service-item relative bg-gradient-onyx p-5 rounded-[14px] shadow-2 z-[1] before:absolute inset-[1px] before:bg-gradient-jet before:rounded-inherit before:z-[1] md:flex md:gap-5"
+						>
+							<div className="service-icon-box mb-3 ">
+								<Image
+									src={item.img}
+									alt={item.alt}
+									className="m-auto md:m-0 w-full max-w-[40px] md:min-w-[35px]"
+									width={30}
+								/>
+							</div>
+							<div className="service-content-box text-center md:text-start flex flex-col gap-2">
+								<p className="h4 service-item-title lg:text-fs-2 leading-none">
+									{item.title}
+								</p>
+								<p className="service-item-text text-light-gray text-fs-5 lg:text-fs-5 font-fw-300">
+									{item.text}
+								</p>
+							</div>
+						</li>
+					))}
 				</ul>
 			</section>
 		</T>

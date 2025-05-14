@@ -58,12 +58,12 @@ const Project = ({
 			<T id="components.my_projects.project.1">
 				<Link
 					href={`${project_link}`}
-					id="vt_main_title"
+					id={`${slug}_vt_main_title`}
 					className="project-title ml-3 mb-2 text-white-1 text-fs-4 font-fw-400 capitalize leading-[1.3]"
 				>
 					{/* <Link href={project_link}> */}
 					<span className="sr-only">Project name</span>
-					<span className="vt_main_title">
+					<span className={`${slug}_vt_main_title`}>
 						<Var>{project_name}</Var>
 					</span>
 					{/* </Link> */}

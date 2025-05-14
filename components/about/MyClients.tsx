@@ -52,19 +52,23 @@ const MyClients = () => {
 		<T id="components.about.myclients.0">
 			<section className="clients mb-4">
 				<h3 className="h3 clients-title flex gap-1">
-					I <span className="lowercase">have worked as a developer for</span>
+					I{" "}
+					<span className="lowercase">have worked as a developer for</span>
 				</h3>
 				{/* overflow-x-auto scroll-smooth overscroll-contain snap-mandatory scroll-p-6 md:gap-10 md:my-0 md:mx-[-30px] md:p-11 md:scroll-ps-[45x] */}
 
 				<ul className="client-list has-scrollbar flex justify-center items-start gap-8 my-0 mx-[-15px] p-6 flex-wrap md:my-0 md:mx-[-30px] md:p-11">
 					<Var>
 						{info.map((items, index) => (
-							<li key={index} className="client-items min-h-[50%] snap-start">
+							<li
+								key={index}
+								className="client-items min-h-[50%] snap-start"
+							>
 								<Link
 									href={items.link}
 									className="grid justify-center items-center gap-3 text-center max-w-[100px]"
 									target="_blank"
-									title={items.name}
+									title={`View ${items.name}`}
 									rel="noopener"
 								>
 									<div className="size-[100px]">
