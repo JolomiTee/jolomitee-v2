@@ -19,6 +19,11 @@ const info = {
 			ion_icon: "logo-twitter",
 			title: "X",
 		},
+		{
+			href: "https://wa.me/2349061603717",
+			ion_icon: "logo-whatsapp",
+			title: "Whatsapp",
+		},
 	],
 };
 

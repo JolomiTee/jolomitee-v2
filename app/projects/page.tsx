@@ -1,7 +1,7 @@
-import { Metadata } from "next";
-import { getProjects } from "../actions";
 import Projects from "@/components/my_projects/Projects";
 import { T } from "gt-next";
+import { Metadata } from "next";
+import { getProjects } from "../actions";
 
 export const metadata: Metadata = {
 	title: "Projects",

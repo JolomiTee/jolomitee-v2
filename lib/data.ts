@@ -75,6 +75,7 @@ export const toolsInfo = [
 		name: "Postman",
 		link: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo.png",
 	},
+	// supplementary
 	// {
 	//     name: "Postgres",
 	//     link: "https://img.icons8.com/color/480/postgreesql.png"
@@ -83,6 +84,4 @@ export const toolsInfo = [
 	//     name: "SQL",
 	//     link: "https://img.icons8.com/color/480/mysql-logo.png"
 	// },
-
-	// supplementary
 ];
