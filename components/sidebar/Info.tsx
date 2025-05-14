@@ -1,6 +1,6 @@
 import { Cake, Globe, LucideMail, PhoneCall } from "lucide-react";
 import Link from "next/link";
-
+import { T } from "gt-next";
 const info = {
 	items: [
 		{
@@ -46,9 +46,11 @@ const Info = () => {
 							{items.icon}
 						</div>
 						<div className="contact-info text-start">
-							<p className="contact-title text-light-gray-70 text-fs-7 uppercase mb-[2px]">
-								{items.contact_title}
-							</p>
+							<T id="contact-info.title">
+								<p className="contact-title text-light-gray-70 text-fs-7 uppercase mb-[2px]">
+									{items.contact_title}
+								</p>
+							</T>
 							{items.element === "time" ? (
 								<time dateTime={items.datetime}>{items.value}</time>
 							) : items.element === "address" ? (

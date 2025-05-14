@@ -17,6 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 import { ProjectTypes, Tag } from "@/types";
 import React, { useState } from "react";
+import { T, Var } from "gt-next";
 
 interface Props {
 	_projects: ProjectTypes[];
@@ -34,7 +35,7 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 
 		const filtered = originalProjects.filter((project) => {
 			return project.tags.some((tag) =>
-				tag.value.toLowerCase().includes(searchValue)
+				tag.value.toLowerCase().includes(searchValue),
 			);
 		});
 
@@ -58,62 +59,66 @@ const AdvancedFilter = ({ _projects, _setProjects }: Props) => {
 	const uniqueTags = extractUniqueTags(originalProjects);
 
 	return (
-		<div className="flex justify-between gap-5 items-center">
-			<Popover open={openCombobox} onOpenChange={setOpenCombobox}>
-				<PopoverTrigger asChild>
-					<Button
-						title="Search tags"
-						variant="outline"
-						role="combobox"
-						aria-expanded={openCombobox}
-						className="w-[200px] justify-between bg-transparent/30 text-white shadow-sm shadow-orange-yellow-crayola hover:bg-transparent/10 hover:text-white"
-					>
-						{value
-							? uniqueTags.find((tag) => tag.value === value)?.label ||
-								"Tag not found"
-							: "Select tag"}
-						<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-					</Button>
-				</PopoverTrigger>
-				<PopoverContent className="w-[200px] p-0 bg-eerie-black-1">
-					<Command className="bg-eerie-black-2 text-white">
-						<CommandInput placeholder="Search tags" />
-						<CommandList className="">
-							<CommandEmpty>No tag found.</CommandEmpty>
-							<CommandGroup>
-								{uniqueTags.map((tag: Tag) => (
-									<CommandItem
-										className="text-white"
-										key={tag.value}
-										value={tag.value}
-										onSelect={(currentValue) => {
-											const newValue =
-												currentValue === value ? "" : currentValue;
-											setValue(newValue);
-											setOpenCombobox(false);
-											setTimeout(
-												() => handleComboSearch(newValue),
-												0
-											); // Invoke the search function
-										}}
-									>
-										<Check
-											className={cn(
-												"mr-2 h-4 w-4",
-												value === tag.value
-													? "opacity-100"
-													: "opacity-0"
-											)}
-										/>
-										{tag.label}
-									</CommandItem>
-								))}
-							</CommandGroup>
-						</CommandList>
-					</Command>
-				</PopoverContent>
-			</Popover>
-		</div>
+		<T id="components.advancedfilter.1">
+			<div className="flex justify-between gap-5 items-center">
+				<Popover open={openCombobox} onOpenChange={setOpenCombobox}>
+					<PopoverTrigger asChild>
+						<Button
+							title="Search tags"
+							variant="outline"
+							role="combobox"
+							aria-expanded={openCombobox}
+							className="w-[200px] justify-between bg-transparent/30 text-white shadow-sm shadow-orange-yellow-crayola hover:bg-transparent/10 hover:text-white"
+						>
+							<Var>
+								{value ? (
+									uniqueTags.find((tag) => tag.value === value)?.label ||
+									"Tag not found"
+								) : (
+									<T id="components.advancedfilter.0">{"Select tag"}</T>
+								)}
+							</Var>
+							<ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+						</Button>
+					</PopoverTrigger>
+					<PopoverContent className="w-[200px] p-0 bg-eerie-black-1">
+						<Command className="bg-eerie-black-2 text-white">
+							<CommandInput placeholder="Search tags" />
+							<CommandList className="">
+								<CommandEmpty>No tag found.</CommandEmpty>
+								<CommandGroup>
+									<Var>
+										{uniqueTags.map((tag: Tag) => (
+											<CommandItem
+												className="text-white"
+												key={tag.value}
+												value={tag.value}
+												onSelect={(currentValue) => {
+													const newValue =
+														currentValue === value ? "" : currentValue;
+													setValue(newValue);
+													setOpenCombobox(false);
+													setTimeout(() => handleComboSearch(newValue), 0); // Invoke the search function
+												}}
+											>
+												<Check
+													className={cn(
+														"mr-2 h-4 w-4",
+														value === tag.value ? "opacity-100" : "opacity-0",
+													)}
+												/>
+
+												{tag.label}
+											</CommandItem>
+										))}
+									</Var>
+								</CommandGroup>
+							</CommandList>
+						</Command>
+					</PopoverContent>
+				</Popover>
+			</div>
+		</T>
 	);
 };
 
