@@ -41,7 +41,7 @@ export const toolsInfo = [
 	},
 	{
 		name: "React",
-		link: "https://img.icons8.com/ultraviolet/120/null/react--v1.png",
+		link: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png",
 	},
 	{
 		name: "Next JS",
@@ -49,7 +49,7 @@ export const toolsInfo = [
 	},
 	{
 		name: "Github",
-		link: "https://img.icons8.com/nolan/128/github.png",
+		link: "https://img.icons8.com/sf-black/64/github.png",
 	},
 	{
 		name: "Visual Studio Code",
@@ -59,16 +59,22 @@ export const toolsInfo = [
 		name: "Figma",
 		link: "https://img.icons8.com/color/144/null/figma--v1.png",
 	},
-
-	// supplementary
-	// {
-	//     name: "NodeJS",
-	//     link: "https://img.icons8.com/color/480/nodejs.png"
-	// },
-	// {
-	//     name: "Express JS",
-	//     link: "https://img.icons8.com/nolan/512/express-js.png"
-	// },
+	{
+		name: "NodeJS",
+		link: "https://img.icons8.com/color/480/nodejs.png",
+	},
+	{
+		name: "Express JS",
+		link: "https://img.icons8.com/nolan/512/express-js.png",
+	},
+	{
+		name: "MongoDB",
+		link: "https://img.icons8.com/color/144/mongodb.png",
+	},
+	{
+		name: "Postman",
+		link: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo.png",
+	},
 	// {
 	//     name: "Postgres",
 	//     link: "https://img.icons8.com/color/480/postgreesql.png"
@@ -77,4 +83,6 @@ export const toolsInfo = [
 	//     name: "SQL",
 	//     link: "https://img.icons8.com/color/480/mysql-logo.png"
 	// },
+
+	// supplementary
 ];

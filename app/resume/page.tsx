@@ -6,7 +6,7 @@ import { Experience } from "@/types";
 import { BookMarkedIcon, Workflow } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
-import { T, Var } from "gt-next";
+import { T, Var, DateTime } from "gt-next";
 
 export const metadata: Metadata = {
 	title: "Resume",
@@ -38,8 +38,8 @@ const Page = async () => {
 										{items.school}
 									</p>
 
-									<span className="text-vegas-gold font-fw-400 leading-[1.6] lg:text-fs-4">
-										{items.startDate} — {items.endDate}
+									<span className="text-vegas-gold font-fw-400 leading-[1.6] lg:text-fs-4 capitalize">
+										<T>{items.startDate}</T> — <T>{items.endDate}</T>
 									</span>
 								</li>
 							))}
@@ -58,31 +58,29 @@ const Page = async () => {
 					</div>
 
 					<ul className="timeline-list text-fs-6 ml-11">
-						<Var>
-							{experiences.map((experience, index) => {
-								const {
-									company,
-									currently_working,
-									start_date,
-									end_date,
-									description,
-									company_link,
-									link_text,
-								} = experience;
-								return (
-									<ListItem
-										key={index}
-										company={company}
-										currently_working={currently_working}
-										start_date={start_date}
-										end_date={end_date}
-										description={description}
-										company_link={company_link}
-										link_text={link_text}
-									/>
-								);
-							})}
-						</Var>
+						{experiences.map((experience, index) => {
+							const {
+								company,
+								currently_working,
+								start_date,
+								end_date,
+								description,
+								company_link,
+								link_text,
+							} = experience;
+							return (
+								<ListItem
+									key={index}
+									company={company}
+									currently_working={currently_working}
+									start_date={start_date}
+									end_date={end_date}
+									description={description}
+									company_link={company_link}
+									link_text={link_text}
+								/>
+							);
+						})}
 					</ul>
 				</section>
 			</T>
