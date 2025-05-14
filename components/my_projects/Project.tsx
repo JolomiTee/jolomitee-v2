@@ -5,6 +5,7 @@ import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import Tags from "./Tags";
+import { T, Var } from "gt-next";
 
 const Project = ({
 	slug,
@@ -35,12 +36,14 @@ const Project = ({
 							<Eye />
 						</div>
 					) : (
-						<Badge
-							variant={"secondary"}
-							className="absolute top-2 right-2 z-10"
-						>
-							Awaiting deployment
-						</Badge>
+						<T id="components.my_projects.project.0">
+							<Badge
+								variant={"secondary"}
+								className="absolute top-2 right-2 z-10"
+							>
+								Awaiting deployment
+							</Badge>
+						</T>
 					)}
 
 					<Image
@@ -52,16 +55,20 @@ const Project = ({
 					/>
 				</figure>
 			</Link>
-			<Link
-				href={`${project_link}`}
-				id="vt_main_title"
-				className="project-title ml-3 mb-2 text-white-1 text-fs-4 font-fw-400 capitalize leading-[1.3]"
-			>
-				{/* <Link href={project_link}> */}
-				<span className="sr-only">Project name</span>
-				<span className="vt_main_title">{project_name}</span>
-				{/* </Link> */}
-			</Link>
+			<T id="components.my_projects.project.1">
+				<Link
+					href={`${project_link}`}
+					id="vt_main_title"
+					className="project-title ml-3 mb-2 text-white-1 text-fs-4 font-fw-400 capitalize leading-[1.3]"
+				>
+					{/* <Link href={project_link}> */}
+					<span className="sr-only">Project name</span>
+					<span className="vt_main_title">
+						<Var>{project_name}</Var>
+					</span>
+					{/* </Link> */}
+				</Link>
+			</T>
 			<Tags tags={tags} />
 		</>
 	);
