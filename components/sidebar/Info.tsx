@@ -14,7 +14,7 @@ const info = {
 			icon: <PhoneCall />,
 			contact_title: "Phone",
 			title: "Call me",
-			attr: "tel:+123 456 7890",
+			attr: "tel:+2349061603717",
 			value: "+234 906 160 3717",
 		},
 		{

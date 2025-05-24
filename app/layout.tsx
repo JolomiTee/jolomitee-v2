@@ -40,7 +40,7 @@ export default async function RootLayout({
 		<T id="layout.0">
 			<ViewTransitions>
 				<html lang={await getLocale()}>
-					<body className={`relative ${inter.className}  `}>
+					<body className={`relative ${inter.className}`}>
 						<GTProvider>
 							<div className="relative md:mt-[10px] md:mb-20 lg:w-max lg:m-auto lg:mb-[70px] 2xl:max-w-[1200px] 2xl:min-w-[95%] 2xl:flex 2xl:justify-center 2xl:items-start 2xl:gap-6 mb-16">
 								<Navbar />
