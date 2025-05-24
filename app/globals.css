@@ -63,7 +63,7 @@
    body {
       @apply bg-smoky-black min-w-[320px];
       margin: 0 auto;
-      padding: 1rem;
+		padding: 0.6rem;
    }
 }
 
@@ -78,9 +78,7 @@ main {
 }
 
 .icon-box {
-   @apply bg-gradient-onyx text-fs-4 text-orange-yellow-crayola relative md:rounded-xl md:text-fs-2;
-   /* width: 25px;
-      height: 25px; */
+	@apply bg-gradient-onyx text-fs-4 text-orange-yellow-crayola relative md:rounded-xl md:text-fs-2;
    border-radius: 8px;
    display: flex;
    justify-content: center;
@@ -243,7 +241,7 @@ main.active {
 
 /* Resume */
 .timeline-item {
-   @apply ps-3;
+	@apply ps-2;
 }
 .timeline-item:not(:last-child) {
    margin-bottom: 30px;

@@ -23,14 +23,14 @@ const Page = async () => {
 
 			<T id="resume.page.1">
 				<section className="timeline mb-8">
-					<div className="title-wrapper flex items-center gap-4 mb-6">
-						<div className="icon-box w-[40px] h-[40px] p-[10px]">
+					<div className="title-wrapper flex items-center gap-3 mb-6">
+						<div className="icon-box size-[30px] md:size-[40px] p-[5px]">
 							<BookMarkedIcon />
 						</div>
 						<h2 className="h3">Formal Education</h2>
 					</div>
 
-					<ul className="timeline-list text-fs-6 ml-11">
+					<ul className="timeline-list text-fs-6 ml-9 md:ml-11">
 						<Var>
 							{schoolInfo.map((items, index) => (
 								<li key={index} className="timeline-item relative">
@@ -50,14 +50,14 @@ const Page = async () => {
 
 			<T id="resume.page.2">
 				<section className="timeline mb-8">
-					<div className="title-wrapper flex items-center gap-4 mb-6">
-						<div className="icon-box w-[40px] h-[40px] p-[10px]">
+					<div className="title-wrapper flex items-center gap-3 mb-6">
+						<div className="icon-box size-[30px] md:size-[40px] p-[5px]">
 							<Workflow />
 						</div>
 						<h3 className="h3">Web Development Experience</h3>
 					</div>
 
-					<ul className="timeline-list text-fs-6 ml-11">
+					<ul className="timeline-list text-fs-6 ml-9 md:ml-11">
 						{experiences.map((experience, index) => {
 							const {
 								company,
