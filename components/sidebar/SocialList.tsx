@@ -1,6 +1,6 @@
+import { T, Var } from "gt-next";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { Var, T } from "gt-next";
 
 const info = {
 	items: [
@@ -48,6 +48,18 @@ const SocialList = () => {
 					</li>
 				</T>
 			))}
+
+			<Link
+				role="link"
+				href={"/files/Jolomi Taiwo Emmanuel - Resume 2025.pdf"}
+				aria-label="See Jolomi Taiwo's resume"
+				target="_blank"
+				title="Jolomi Taiwo's Resume"
+				className="social-link text-light-gray-70 text-fs-5 xl:text-fs-3 hover:text-white flex gap-1 items-center"
+			>
+				<span className="sr-only">See Jolomi&apos; resume </span>
+				<Var>My Resume</Var> <ArrowUpRight className="w-3 h-3" />
+			</Link>
 		</ul>
 	);
 };

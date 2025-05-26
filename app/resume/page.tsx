@@ -1,12 +1,13 @@
+import PDFPreview from "@/components/PDFPreview";
 import ListItem from "@/components/resume/ListItem";
 import { schoolInfo, toolsInfo } from "@/lib/data";
 import { getAllExperience } from "@/lib/queries";
 import { client } from "@/sanity/lib/client";
 import { Experience } from "@/types";
+import { T, Var } from "gt-next";
 import { BookMarkedIcon, Workflow } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
-import { T, Var, DateTime } from "gt-next";
 
 export const metadata: Metadata = {
 	title: "Resume",
@@ -84,6 +85,10 @@ const Page = async () => {
 					</ul>
 				</section>
 			</T>
+
+			<section className="mb-8">
+				<PDFPreview />
+			</section>
 
 			<T id="resume.page.3">
 				<section className="skill mb-8">
