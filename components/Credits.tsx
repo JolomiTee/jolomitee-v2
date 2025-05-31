@@ -2,7 +2,6 @@ import Image from "next/image";
 import { T } from "gt-next";
 
 const Credits = () => {
-
 	const creditList = [
 		{
 			icon: "/nextjs.svg",
@@ -47,36 +46,14 @@ const Credits = () => {
 				Powered by:
 				<div className="flex justify-center items-center gap-5 flex-wrap">
 					{creditList.map((item, key) => (
-						<>
-							<Image
-								width={item.width}
-								height={item.height}
-								src={item.icon}
-								alt={item.alt}
-								className=""
-							/>
-						</>
+						<Image
+							width={item.width}
+							height={item.height}
+							src={item.icon}
+							alt={item.alt}
+							key={key}
+						/>
 					))}
-					{/* <Image
-						width={70}
-						height={30}
-						src="/sanity.svg"
-						alt="sanity.io"
-					/>
-					<Image width={70} height={30} src="/vercel.svg" alt="Vercel" />
-					<Image
-						width={30}
-						height={30}
-						src="/shadcn.png"
-						alt="Shadcn-ui"
-					/>
-					<Image width={30} height={30} src="/tailwind.svg" alt="nextjs" />
-					<Image
-						width={35}
-						height={35}
-						src="/general-translation.svg"
-						alt="general translation"
-					/> */}
 				</div>
 			</div>
 		</T>
