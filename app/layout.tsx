@@ -52,10 +52,12 @@ export default async function RootLayout({
 									<Var>{children}</Var>
 								</main>
 							</div>
-							<footer className="text-center text-white-2 mb-16 xl:flex xl:mb-0 xl:gap-5 xl:justify-between xl:items-center 2xl:max-w-[1200px] 2xl:min-w-[95%] mx-auto">
-								<div className="text-center flex gap-2 items-center h-fit">
+							<footer className="text-center text-white-2 mb-16 xl:flex xl:mb-0 xl:gap-5 xl:justify-between xl:items-start 2xl:items-center 2xl:max-w-[1200px] 2xl:min-w-[95%] mx-auto">
+								<div className="text-center hidden xl:flex gap-1 items-center h-fit">
 									<b>JolomiTee</b>
-									<small>version 2.0</small>
+									<small className="font-bold text-white/50">
+										v2.0
+									</small>
 								</div>
 								<div className="xl:block hidden">
 									<SocialList />
