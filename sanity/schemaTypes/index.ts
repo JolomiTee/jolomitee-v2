@@ -1,9 +1,0 @@
-import { type SchemaTypeDefinition } from 'sanity'
-import frontend_experience from "../schemas/frontend_experience";
-import backend_experience from "../schemas/backend_experience";
-import projects from "../schemas/projects";
-import tags from "../schemas/tags";
-
-export const schema: { types: SchemaTypeDefinition[] } = {
-	types: [frontend_experience, backend_experience, projects, tags],
-};
