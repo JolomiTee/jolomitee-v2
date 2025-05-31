@@ -29,7 +29,7 @@ const info = {
 
 const SocialList = () => {
 	return (
-		<ul className="social-list flex justify-center md:justify-start items-center gap-x-5 gap-y-3 pb-1 ps-2 2xl:justify-center flex-wrap">
+		<ul className="social-list flex justify-center md:justify-start items-center gap-x-5 gap-y-3 pb-1 ps-2 xl:p-0 xl:grid xl:grid-cols-3 2xl:flex 2xl:justify-center flex-wrap">
 			{info.items.map((items, index) => (
 				<T key={index} id="components.sidebar.sociallist.0">
 					<li className="social-item">
