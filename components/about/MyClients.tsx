@@ -5,6 +5,7 @@ import Cedarwit from "@/public/orgs/Cedarwit.jpeg";
 import Probueno from "@/public/orgs/Probueno_afri_ltd.png";
 import Netflash from "@/public/orgs/netflash.png";
 import Geoanaltech from "@/public/orgs/Geoanaltech.webp";
+import Marathona from "@/public/orgs/marathona.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import { Var, T } from "gt-next";
@@ -44,6 +45,11 @@ const info = [
 		link: "https://www.probuenoafriltd.com/",
 		name: "Pro Bueno AfriLtd",
 		img: Probueno,
+	},
+	{
+		link: "https://www.marathona.com",
+		name: "Marathona Abirom",
+		img: Marathona,
 	},
 ];
 
